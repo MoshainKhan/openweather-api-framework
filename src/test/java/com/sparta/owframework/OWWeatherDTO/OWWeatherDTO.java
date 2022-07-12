@@ -1,5 +1,7 @@
 package com.sparta.owframework.OWWeatherDTO;
 
+import java.time.LocalDate;
+import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -118,4 +120,12 @@ public class OWWeatherDTO {
 			return true;
 		} else return timezone % 3600 == 0;
 	}
+
+	public boolean requestDateSentCorrect() {
+		Date time = new Date((dt) * 1000L);
+		String requestDate = time.toString();
+		String currentDate = LocalDate.now().toString();
+		return requestDate.contains(currentDate);
+	}
+
 }
