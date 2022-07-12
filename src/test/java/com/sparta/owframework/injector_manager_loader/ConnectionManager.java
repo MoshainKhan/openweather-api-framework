@@ -48,11 +48,13 @@ public class ConnectionManager {
     }
 
     public static String getConnectionCity(String city_name, String country_code, Units measurement) {
-        return getConnectionCity(city_name, measurement) + "," + country_code;
+        getResponse();
+        return BASEURL + "q=" + city_name + "," + country_code + getKey() + measurement.getValue();
     }
 
     public static String getConnectionCity(String city_name, String state_code, String country_code, Units measurement) {
-        return getConnectionCity(city_name, measurement) + "," + state_code + "," + country_code;
+        getResponse();
+        return BASEURL + "q=" + city_name + "," + state_code + "," + country_code + getKey() + measurement.getValue();
     }
 
     public static String getConnectionId(int city_id, Units measurement) {
