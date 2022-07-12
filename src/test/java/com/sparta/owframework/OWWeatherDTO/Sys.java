@@ -2,7 +2,7 @@ package com.sparta.owframework.OWWeatherDTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Sys{
+public class Sys {
 
 	@JsonProperty("country")
 	private String country;
@@ -22,27 +22,27 @@ public class Sys{
 	@JsonProperty("message")
 	private Double message;
 
-	public String getCountry(){
+	public String getCountry() {
 		return country;
 	}
 
-	public Integer getSunrise(){
+	public Integer getSunrise() {
 		return sunrise;
 	}
 
-	public Integer getSunset(){
+	public Integer getSunset() {
 		return sunset;
 	}
 
-	public Integer getId(){
+	public Integer getId() {
 		return id;
 	}
 
-	public Integer getType(){
+	public Integer getType() {
 		return type;
 	}
 
-	public Double getMessage(){
+	public Double getMessage() {
 		return message;
 	}
 
@@ -53,16 +53,16 @@ public class Sys{
 	public boolean hasExactlyTwoChars(String countryCode) {
 		return countryCode.length() == 2;
 
-	public boolean isTypeAndIdValidValues() {
-		return type >= 0 && id >= 0;
-	}
+		public boolean isTypeAndIdValidValues () {
+			return type >= 0 && id >= 0;
+		}
 
-	public boolean isSunriseAValidTimeStamp() {
-		return true;
-	}
+		public boolean isSunriseAValidTimeStamp () {
+			return true;
+		}
 
-	public boolean isSunsetAValidTimeStamp() {
-		return true;
-
+		public boolean isSunsetAValidTimeStamp () {
+			return true;
+		}
 	}
 }

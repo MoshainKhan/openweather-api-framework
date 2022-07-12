@@ -17,4 +17,4 @@ Feature: As a tester,I want to test  that I can see the rain volume for
   Scenario: checking the volume of the rain is in millimeter(mm).
 
     When I test value for the rain
-    Then I should get the values in millimeter(mm).
+    Then It should be in the correct format
