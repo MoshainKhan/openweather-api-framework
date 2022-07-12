@@ -18,12 +18,13 @@ public class Coord{
 		return lat;
 	}
 
-	public boolean isLatBetweenNeg90AndPos90(double number) {
-		return number >= -90 || number <= 90;
+	public boolean isLatBetweenNeg90AndPos90() {
+
+		return lat >= -90 && lat <= 90;
 	}
 
-	public boolean isLongBetweenNeg180AndPos180(double number) {
-		return number >= -180 || number <= 180;
+	public boolean isLongBetweenNeg180AndPos180() {
+		return lon >= -180  && lon <= 180;
 	}
 
 }

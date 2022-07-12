@@ -23,12 +23,29 @@ public class Wind{
 
 	public Double getGust() {return gust; }
 
+
+	public boolean hasSpeed() {
+		return speed != null;
+	}
+
+	public boolean hasGust() {
+		return gust != null;
+	}
+
+	public boolean hasDeg() {
+		return deg != null;
+	}
+
 	public boolean isValidDegreesValue() {
-		return deg >= 0 && deg <= 360;
+		if (hasDeg()) {
+			return deg >= 0 && deg <= 360;
+		} else {
+			return false;
+		}
 	}
 
 	public boolean isGustGreaterThanSpeed() {
-		if (gust != null) {
+		if (hasGust()) {
 			return gust >= speed;
 		} else {
 			return false;
@@ -36,18 +53,10 @@ public class Wind{
 	}
 
 	public boolean validSpeedAndGust() {
-		if (gust != null) {
+		if (hasSpeed()) {
 			return speed >= 0 && gust >= 0;
 		} else {
 			return speed >= 0;
 		}
-	}
-
-	public static void main(String[] args) {
-		Integer hello = null;
-
-		int hel = 4;
-
-		System.out.println(hel >= hello);
 	}
 }

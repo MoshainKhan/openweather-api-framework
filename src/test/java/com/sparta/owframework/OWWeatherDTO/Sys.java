@@ -42,28 +42,46 @@ public class Sys{
 		return type;
 	}
 
-	public Double getMessage(){
-		return message;
+	public Double getMessage(){ return message; }
+
+	public boolean hasMessage() {
+		return message != null;
 	}
 
-	public boolean isSunriseBeforeSunset(int sunrise, int sunset) {
-		return sunrise > sunset;
+
+	public boolean hasCountry() {
+		return country != null;
 	}
 
-	public boolean hasExactlyTwoChars(String countryCode) {
-		return countryCode.length() == 2;
-	}
-	public boolean isTypeAndIdValidValues() {
-		return type >= 0 && id >= 0;
+	public boolean hasSunrise() {
+		return sunrise != null;
 	}
 
-	public boolean isSunriseAValidTimeStamp() {
-		return true;
+	public boolean hasSunset() {
+		return sunset != null;
 	}
 
-	public boolean isSunsetAValidTimeStamp() {
-		return true;
-
+	public boolean hasId() {
+		return id != null;
 	}
 
+	public boolean hasType() {
+		return type != null;
+	}
+
+	public boolean isSunriseBeforeSunset() {
+		if (hasSunrise() && hasSunset()) {
+			return sunrise > sunset;
+		} else {
+			return false;
+		}
+	}
+
+    public boolean hasExactlyTwoChars() {
+		if (hasCountry()) {
+			return country.length() == 2;
+		} else {
+			return false;
+		}
+	}
 }

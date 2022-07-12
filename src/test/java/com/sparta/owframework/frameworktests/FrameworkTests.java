@@ -16,9 +16,11 @@ public class FrameworkTests {
     Wind wind = new Wind();
 
 
+
     @DisplayName("Coord") //F
     @Nested //F
     class CoordTests{ //A & F tests
+
         @Test
         @DisplayName("Check Lon values are present")
         void LonValuePresent(){
@@ -130,6 +132,7 @@ public class FrameworkTests {
 
     }
 
+
     @DisplayName("") //F
     @Nested
     class OWWeatherDTO{
@@ -202,8 +205,8 @@ public class FrameworkTests {
 
     }
 
-    @DisplayName("Wind")  //F
     @Nested
+    @DisplayName("Wind")  //F
     class WindTests {
         @Test
         @DisplayName("Check wind & gust values present and valid")
@@ -213,12 +216,14 @@ public class FrameworkTests {
             Assertions.assertNotNull(wind.getGust());
             Assertions.assertTrue(wind.validSpeedAndGust());
         }
-        @Test
-        @DisplayName("Gust is greater than wind speed")
-        void GustGreaterThanWindSpeed() {
 
-            Assertions.assertTrue(wind.isGustGreaterThanSpeed());
-        }
+            @Test
+            @DisplayName("Gust is greater than wind speed")
+            void GustGreaterThanWindSpeed() {
+
+                Assertions.assertTrue(wind.isGustGreaterThanSpeed());
+            }
+
 
         @Test
         @DisplayName("Degrees validity and present check")
@@ -233,6 +238,7 @@ public class FrameworkTests {
 
 
     }
+
 
     @DisplayName("Injector Tests") //A
     @Nested
@@ -291,3 +297,5 @@ public class FrameworkTests {
 
 
 }
+
+
