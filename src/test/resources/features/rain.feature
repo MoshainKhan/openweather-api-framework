@@ -7,14 +7,14 @@ Feature: As a tester,I want to test  that I can see the rain volume for
 
   Scenario: checking the volume of the rain for 1 hour.
     When I test value for the rain in an hour
-    Then I should  match the volume with the actual.
+    Then I should  return the int.
 
   Scenario: checking the volume of the rain for 3 hours.
 
     When I test value for the rain in 3 hours
-    Then I should  match the volume  with the actual.
+    Then I should  return the an int.
 
   Scenario: checking the volume of the rain is in millimeter(mm).
 
     When I test value for the rain
-    Then I should get the values in millimeter(mm).
+    Then I should gbe in the correct format.
