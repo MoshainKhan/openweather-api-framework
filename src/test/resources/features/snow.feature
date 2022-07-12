@@ -3,9 +3,9 @@ Feature: As a Tester, I want a framework that will ensure the snow volume values
   Background: Checking the snow volume values are valid
     Given I have a JSON response including snow
 
-    Scenario: checking the snow volume values are an INT
+    Scenario: checking the snow volume values are an double
       When I check the snow values
-      Then it should return the values which are INTs
+      Then it should return the values which are double
 
     Scenario: checking the snow volume values are not less than zero
       When I check the snow values
