@@ -1,0 +1,11 @@
+Feature: As a tester, I want a framework that will check the values for clouds
+          is between 0 and 100%,
+        so that I can check for inaccurate outputs.
+
+  Scenario: Checking valid cloud outputs
+    Given I have a JSON response
+    When I test the cloud percentage
+    Then I should get a value between 0 and 100
+
+
+    
