@@ -24,20 +24,20 @@ public class Wind{
 	public Double getGust() {return gust; }
 
 
-	public boolean isSpeed() {
+	public boolean hasSpeed() {
 		return speed != null;
 	}
 
-	public boolean isGust() {
+	public boolean hasGust() {
 		return gust != null;
 	}
 
-	public boolean isDeg() {
+	public boolean hasDeg() {
 		return deg != null;
 	}
 
 	public boolean isValidDegreesValue() {
-		if (isDeg()) {
+		if (hasDeg()) {
 			return deg >= 0 && deg <= 360;
 		} else {
 			return false;
@@ -45,7 +45,7 @@ public class Wind{
 	}
 
 	public boolean isGustGreaterThanSpeed() {
-		if (isGust()) {
+		if (hasGust()) {
 			return gust >= speed;
 		} else {
 			return false;
@@ -53,7 +53,7 @@ public class Wind{
 	}
 
 	public boolean validSpeedAndGust() {
-		if (isSpeed()) {
+		if (hasSpeed()) {
 			return speed >= 0 && gust >= 0;
 		} else {
 			return speed >= 0;
