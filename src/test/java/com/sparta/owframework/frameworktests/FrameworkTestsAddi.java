@@ -1,6 +1,6 @@
 package com.sparta.owframework.frameworktests;
 
-import com.sparta.owframework.ConnectionManager;
+//import com.sparta.owframework.ConnectionManager;
 import com.sparta.owframework.OWWeatherDTO.*;
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;

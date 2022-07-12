@@ -1,6 +1,9 @@
 package com.sparta.owframework.injector_manager_loader;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.sparta.owframework.OWBadResponseDTO.OWBadResponseDTO;
+import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
+
 
 import java.io.IOException;
 import java.net.URL;

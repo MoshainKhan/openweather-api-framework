@@ -3,7 +3,7 @@ package com.sparta.owframework.OWWeatherDTO;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Response{
+public class OWWeatherDTO {
 
 	@JsonProperty("rain")
 	private Rain rain;
