@@ -32,6 +32,22 @@ public class WeatherItem {
 		return id;
 	}
 
+	public boolean isId() {
+		return id != null;
+	}
+
+	public boolean isIcon() {
+		return icon != null;
+	}
+
+	public boolean isDescription() {
+		return description != null;
+	}
+
+	public boolean isMain() {
+		return main != null;
+	}
+
 	public boolean isValidIconDescMainIdCombo() {
 		return switch (id) {
 			case 200 -> description.equals("thunderstorm with light rain") && main.equals("Thunderstorm") && icon.equals("11d");
