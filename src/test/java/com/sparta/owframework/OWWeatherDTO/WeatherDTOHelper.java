@@ -9,4 +9,8 @@ public class WeatherDTOHelper {
     public boolean isNotLessThan0(double value) {
         return value >= 0;
     }
+
+    public boolean isMinLessThanMax(double max, double min) {
+        return min < max;
+    }
 }
