@@ -45,4 +45,16 @@ public class Sys{
 	public Double getMessage(){
 		return message;
 	}
+
+	public boolean isTypeAndIdValidValues() {
+		return type >= 0 && id >= 0;
+	}
+
+	public boolean isSunriseAValidTimeStamp() {
+		return true;
+	}
+
+	public boolean isSunsetAValidTimeStamp() {
+		return true;
+	}
 }
