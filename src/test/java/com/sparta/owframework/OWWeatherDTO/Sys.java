@@ -45,4 +45,24 @@ public class Sys{
 	public Double getMessage(){
 		return message;
 	}
+
+	public boolean isSunriseBeforeSunset(int sunrise, int sunset) {
+		return sunrise > sunset;
+	}
+
+	public boolean hasExactlyTwoChars(String countryCode) {
+		return countryCode.length() == 2;
+
+	public boolean isTypeAndIdValidValues() {
+		return type >= 0 && id >= 0;
+	}
+
+	public boolean isSunriseAValidTimeStamp() {
+		return true;
+	}
+
+	public boolean isSunsetAValidTimeStamp() {
+		return true;
+
+	}
 }

@@ -17,7 +17,7 @@ public class Main{
 	private Integer humidity;
 
 	@JsonProperty("pressure")
-	private Integer pressure;
+	private Double pressure;
 
 	@JsonProperty("sea_level")
 	private Double seaLevel;
@@ -44,7 +44,7 @@ public class Main{
 		return humidity;
 	}
 
-	public Integer getPressure(){
+	public Double getPressure(){
 		return pressure;
 	}
 
@@ -59,4 +59,18 @@ public class Main{
 	public Double getTempMax(){
 		return tempMax;
 	}
+
+	public boolean isMinLessThanMax(double max, double min) {
+		return min < max;
+	}
+
+	public boolean isTempBetweenTempMinAndMax(double max, double min, double value) {
+		return value >= min && value <= max;
+	}
+
+	public boolean isPressureBetween100And1100(double pressure) {
+		return pressure >= 100 || pressure <= 1100;
+	}
+
+
 }
