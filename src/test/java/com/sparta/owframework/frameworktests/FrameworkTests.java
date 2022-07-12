@@ -2,6 +2,7 @@ package com.sparta.owframework.frameworktests;
 
 import com.sparta.owframework.OWWeatherDTO.Coord;
 import com.sparta.owframework.OWWeatherDTO.Main;
+import com.sparta.owframework.OWWeatherDTO.Wind;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -11,6 +12,11 @@ public class FrameworkTests {
 
     Coord coord = new Coord();
     Main main = new Main();
+
+    Wind wind = new Wind();
+
+
+
     @DisplayName("Coord")
     @Nested
     class CoordTests{
@@ -95,4 +101,38 @@ public class FrameworkTests {
 
     }
 
-}
+    @DisplayName("Wind")
+    @Nested
+    class WindTests {
+        @Test
+        @DisplayName("Check wind & gust values present and valid")
+        void TempPresentAndValid() {
+
+            Assertions.assertNotNull(wind.getSpeed());
+            Assertions.assertNotNull(wind.getGust());
+            Assertions.assertTrue(wind.validSpeedAndGust());
+        }
+            @Test
+            @DisplayName("Gust is greater than wind speed")
+            void GustGreaterThanWindSpeed() {
+
+                Assertions.assertTrue(wind.isGustGreaterThanSpeed());
+            }
+
+        @Test
+        @DisplayName("Degrees validity and present check")
+        void DegreesValidityAndPresent() {
+
+            Assertions.assertNotNull(wind.getDeg());
+            Assertions.assertTrue(wind.isValidDegreesValue());
+        }
+
+
+
+
+
+    }
+
+
+
+    }

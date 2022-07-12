@@ -112,7 +112,7 @@ public class OWWeatherDTO {
 		return wind;
 	}
 
-	public boolean isMultipleOf3600(int timezone) {
+	public boolean isMultipleOf3600() {
 
 		int absOfTimezone = Math.abs(timezone);
 

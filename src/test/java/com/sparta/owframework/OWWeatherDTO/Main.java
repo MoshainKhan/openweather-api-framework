@@ -60,16 +60,13 @@ public class Main{
 		return tempMax;
 	}
 
-	public boolean isMinLessThanMax(double max, double min) {
-		return min < max;
+
+	public boolean isTempBetweenTempMinAndMax() {
+		return temp >= tempMin && temp <= tempMax;
 	}
 
-	public boolean isTempBetweenTempMinAndMax(double max, double min, double value) {
-		return value >= min && value <= max;
-	}
-
-	public boolean isPressureBetween100And1100(double pressure) {
-		return pressure >= 100 || pressure <= 1100;
+	public boolean isPressureBetween100And1100() {
+		return pressure >= 100 && pressure <= 1100;
 	}
 
 

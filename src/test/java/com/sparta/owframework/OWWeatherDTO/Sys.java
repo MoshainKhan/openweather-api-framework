@@ -48,12 +48,20 @@ public class Sys{
 		return message != null;
 	}
 
+
 	public boolean isCountry() {
 		return country != null;
 	}
 
 	public boolean isSunrise() {
 		return sunrise != null;
+
+	public boolean isSunriseBeforeSunset() {
+		return sunrise > sunset;
+	}
+
+	public boolean hasExactlyTwoChars() {
+		return country.length() == 2;
 	}
 
 	public boolean isSunset() {
