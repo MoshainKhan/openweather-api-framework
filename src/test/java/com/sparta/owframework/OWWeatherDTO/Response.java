@@ -109,4 +109,13 @@ public class Response{
 	public Wind getWind(){
 		return wind;
 	}
+
+	public boolean isMultipleOf3600(int timezone) {
+
+		int absOfTimezone = Math.abs(timezone);
+
+		if (absOfTimezone == 0) {
+			return true;
+		} else return timezone % 3600 == 0;
+	}
 }

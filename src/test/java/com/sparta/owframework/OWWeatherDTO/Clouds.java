@@ -10,4 +10,7 @@ public class Clouds{
 	public Integer getAll(){
 		return all;
 	}
+
+
+
 }
