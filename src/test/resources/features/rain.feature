@@ -7,14 +7,14 @@ Feature: As a tester,I want to test  that I can see the rain volume for
 
   Scenario: checking the volume of the rain for 1 hour.
     When I test value for the rain in an hour
-    Then I should  return the int.
+    Then I should  return the double.
 
   Scenario: checking the volume of the rain for 3 hours.
 
     When I test value for the rain in 3 hours
-    Then I should  return the an int.
+    Then I should  return the an double.
 
   Scenario: checking the volume of the rain is in millimeter(mm).
 
     When I test value for the rain
-    Then I should gbe in the correct format.
+    Then I should be in the correct format.

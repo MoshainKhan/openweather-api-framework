@@ -4,17 +4,17 @@ Feature: As a tester I want the framework that checks the type,id,message,countr
   Background:checking the values are in correct data types
     Given I have a JSON response
 
-  Scenario: checking the system type is in int.
+  Scenario: checking the system type is in integer.
     When I test value for the system type
-    Then the value should be in int.
+    Then the value should be in integer.
 
-  Scenario: checking the system id is in int.
+  Scenario: checking the system id is in integer.
     When I test value for the ID type
-    Then the value should be in int.
+    Then the value should be in integer.
 
-  Scenario: checking the system message is in String.
+  Scenario: checking the system message is in double.
     When I test value for the message type
-    Then the value should be in String.
+    Then the value should be in double.
 
   Scenario: checking the system country code is in String.
     When I test value for the country code type
