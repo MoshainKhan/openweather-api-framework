@@ -10,6 +10,14 @@ public class Rain{
 	@JsonProperty("1h")
 	private Double jsonMember1h;
 
+	public boolean hasJsonMember3h(){
+		return jsonMember3h != null;
+	}
+
+	public boolean hasJsonMember1h(){
+		return jsonMember1h != null;
+	}
+
 	public Double getJsonMember3h(){
 		return jsonMember3h;
 	}

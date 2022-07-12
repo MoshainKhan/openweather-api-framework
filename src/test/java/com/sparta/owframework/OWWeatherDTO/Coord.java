@@ -18,6 +18,15 @@ public class Coord{
 		return lat;
 	}
 
+	public boolean hasLong() {
+		return getLon() == null;
+	}
+
+	public boolean hasLat() {
+		return getLon() == null;
+	}
+
+
 	public boolean isLatBetweenNeg90AndPos90() {
 
 		return lat >= -90 && lat <= 90;

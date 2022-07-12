@@ -1,6 +1,7 @@
 package com.sparta.owframework.OWWeatherDTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.cucumber.java.an.E;
 
 public class Main{
 
@@ -60,6 +61,37 @@ public class Main{
 		return tempMax;
 	}
 
+	public boolean hasTemp() {
+		return temp != null;
+	}
+
+	public boolean hasTempMin() {
+		return tempMin != null;
+	}
+
+	public boolean hasTempMax() {
+		return tempMax != null;
+	}
+
+	public boolean hasHumidity() {
+		return humidity != null;
+	}
+
+	public boolean hasPressure() {
+		return pressure != null;
+	}
+
+	public boolean hasSeaLevel() {
+		return seaLevel != null;
+	}
+
+	public boolean hasGrndLevel() {
+		return grndLevel != null;
+	}
+
+	public boolean hasFeelsLike() {
+		return feelsLike != null;
+	}
 
 	public boolean isTempBetweenTempMinAndMax() {
 		return temp >= tempMin && temp <= tempMax;
