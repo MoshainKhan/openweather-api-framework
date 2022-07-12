@@ -7,6 +7,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OWWeatherDTO {
 
+
+
 	@JsonProperty("rain")
 	private Rain rain;
 
@@ -110,6 +112,64 @@ public class OWWeatherDTO {
 
 	public Wind getWind(){
 		return wind;
+	}
+
+	public boolean hasRain() {
+		return rain != null;
+	}
+
+	public boolean hasVisibility() {
+		return visibility != null;
+	}
+
+	public boolean hasTimeZone() {
+		return timezone != null;
+	}
+
+	public boolean hasMain() {
+		return main != null;
+	}
+
+	public boolean hasClouds(){
+		return clouds != null;
+	}
+
+	public boolean hasSys(){
+		return sys != null;
+	}
+
+	public boolean hasDt(){
+		return dt != null;
+	}
+
+	public boolean hasCoord(){
+		return coord != null;
+	}
+
+	public boolean hasSnow(){ return snow != null; }
+
+	public boolean hasWeather(){
+		return weather != null;
+	}
+
+	public boolean hasName(){
+		return name != null;
+	}
+
+	public boolean hasCod(){
+		return cod != null;
+	}
+
+	public boolean hasId(){
+		return id != null;
+	}
+
+	public boolean hasBase(){
+		return base != null;
+	}
+
+	public boolean hasWind(){
+		return wind != null;
 	}
 
 	public boolean isMultipleOf3600() {

@@ -11,6 +11,9 @@ public class Clouds{
 		return all;
 	}
 
+	public boolean hasCloud() {
+		return getAll() == null;
+	}
 
 
 }
