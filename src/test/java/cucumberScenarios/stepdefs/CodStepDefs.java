@@ -1,4 +1,4 @@
-package cucumber.stepdefs;
+package cucumberScenarios.stepdefs;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;

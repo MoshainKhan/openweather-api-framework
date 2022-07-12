@@ -1,4 +1,4 @@
-package cucumber.stepdefs;
+package cucumberScenarios.stepdefs;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,11 +9,11 @@ public class LatLonStepDefs {
     }
 
     @Then("I should receive a value between {int} and {int}")
-    public void iShouldReceiveAValueBetweenAnd(int arg0, int arg1) {
+    public void iShouldReceiveAValueBetweenAndMinus90and90() {
     }
 
     @Then("I should receive a value with no more than {int} decimal places")
-    public void iShouldReceiveAValueWithNoMoreThanDecimalPlaces(int arg0) {
+    public void iShouldReceiveAValueWithNoMoreThanFourDecimalPlaces() {
     }
 
     @When("I test the lon field")
@@ -21,6 +21,6 @@ public class LatLonStepDefs {
     }
 
     @Then("I should receive a value  with no more than {int} decimal places")
-    public void iShouldReceiveAValueWithNoMoreThanDecimalPlaces(int arg0) {
+    public void iShouldReceiveAValueWithNoMoreThanDecimalPlaces() {
     }
 }

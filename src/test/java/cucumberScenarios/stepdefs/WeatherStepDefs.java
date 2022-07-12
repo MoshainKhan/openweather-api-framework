@@ -1,5 +1,4 @@
-package cucumber.stepdefs;
-
+package cucumberScenarios.stepdefs;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -13,15 +12,15 @@ public class WeatherStepDefs {
     public void mainDescriptionIsThunderstorm() {
     }
 
-    @Then("ID should be between {int} and {int}")
-    public void idShouldBeBetweenAnd(int arg0, int arg1) {
+    @Then("ID should be between 200 and 232")
+    public void idShouldBeBetween200And232() {
     }
 
-    @Then("Description should contain {string}")
+    @Then("Description should contain Thunderstorm")
     public void descriptionShouldContainThunderstorm() {
     }
 
     @Then("icon should be {int}d")
-    public void iconShouldBeD(int arg0) {
+    public void iconShouldBe11D() {
     }
 }
