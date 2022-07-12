@@ -42,4 +42,4 @@ out/
 *.ipr
 *.iws
 .properties
-src/test/java/com/sparta/owframework/MUST_BE_IGNORED.properties
+src/test/java/com/sparta/owframework/injector_manager_loader/MUST_BE_IGNORED.properties
