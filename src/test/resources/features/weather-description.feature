@@ -5,12 +5,12 @@ Feature: As a tester, I want a framework that will ensure the weather id, main, 
 
   Scenario: Main description is Thunderstorm
     When Main description is Thunderstorm
-    Then ID should be between two hundred and two hundred and thirty two
+    Then ID should be between 200 and 232
 
   Scenario: Main description is Thunderstorm and ID between 200 and 232
     When Main description is Thunderstorm
-    Then Description should contain thunderstorm
+    Then Description should contain 'thunderstorm'
 
   Scenario: Main description is Thunderstorm and ID between 200 and 232
     When Main description is Thunderstorm
-    Then icon should be "11d"
+    Then icon should be 11d

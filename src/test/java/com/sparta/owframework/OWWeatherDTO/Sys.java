@@ -44,33 +44,40 @@ public class Sys{
 
 	public Double getMessage(){ return message; }
 
-	public boolean hasMessage() {
+	public boolean isMessage() {
 		return message != null;
 	}
 
 
-	public boolean hasCountry() {
+	public boolean isCountry() {
 		return country != null;
 	}
 
-	public boolean hasSunrise() {
+	public boolean isSunrise() {
 		return sunrise != null;
+
+	public boolean isSunriseBeforeSunset() {
+		return sunrise > sunset;
 	}
 
-	public boolean hasSunset() {
+	public boolean hasExactlyTwoChars() {
+		return country.length() == 2;
+	}
+
+	public boolean isSunset() {
 		return sunset != null;
 	}
 
-	public boolean hasId() {
+	public boolean isId() {
 		return id != null;
 	}
 
-	public boolean hasType() {
+	public boolean isType() {
 		return type != null;
 	}
 
 	public boolean isSunriseBeforeSunset() {
-		if (hasSunrise() && hasSunset()) {
+		if (isSunrise() && isSunset()) {
 			return sunrise > sunset;
 		} else {
 			return false;
@@ -78,7 +85,7 @@ public class Sys{
 	}
 
     public boolean hasExactlyTwoChars() {
-		if (hasCountry()) {
+		if (isCountry()) {
 			return country.length() == 2;
 		} else {
 			return false;
