@@ -28,10 +28,27 @@ public class Wind{
 	}
 
 	public boolean isGustGreaterThanSpeed() {
-		return gust >= speed;
+		if (gust != null) {
+			return gust >= speed;
+		} else {
+			return false;
+		}
 	}
 
 	public boolean validSpeedAndGust() {
-		return speed >= 0 && gust >= 0;
+		if (gust != null) {
+			return speed >= 0 && gust >= 0;
+		} else {
+			return speed >= 0;
+		}
 	}
+
+	public static void main(String[] args) {
+		Integer hello = null;
+
+		int hel = 4;
+
+		System.out.println(hel >= hello);
+	}
+
 }

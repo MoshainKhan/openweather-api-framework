@@ -2,7 +2,7 @@ package com.sparta.owframework.OWBadResponseDTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Response{
+public class OWBadResponseDTO {
 
 	@JsonProperty("cod")
 	private String cod;

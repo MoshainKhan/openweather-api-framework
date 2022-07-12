@@ -46,13 +46,13 @@ public class Sys{
 		return message;
 	}
 
-	public boolean isSunriseBeforeSunset() {
+	public boolean isSunriseBeforeSunset(int sunrise, int sunset) {
 		return sunrise > sunset;
 	}
 
-	public boolean hasExactlyTwoChars() {
-		return country.length() == 2;
-
+	public boolean hasExactlyTwoChars(String countryCode) {
+		return countryCode.length() == 2;
+	}
 	public boolean isTypeAndIdValidValues() {
 		return type >= 0 && id >= 0;
 	}
@@ -65,4 +65,6 @@ public class Sys{
 		return true;
 
 	}
+
+    
 }
