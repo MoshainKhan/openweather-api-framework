@@ -20,7 +20,7 @@ public class RainStepDefs {
     }
     @When("I test value for the rain in an hour")
     public void iTestValueForTheRainInAnHour() {
-        Assertions.assertTrue(rain.hasJsonMember1h());
+
     }
 
     @Then("I should  return the double.")
