@@ -1,11 +1,17 @@
 package cucumberScenarios.stepdefs;
+import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
+import com.sparta.owframework.injector_manager_loader.ConnectionManager;
+import com.sparta.owframework.injector_manager_loader.Injector;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class WeatherStepDefs {
+    OWWeatherDTO owWeatherDTO;
+
     @Given("I have a weatherItem")
     public void iHaveAWeatherItem() {
+        owWeatherDTO = Injector.injectOWWeatherDTO(ConnectionManager.getConnectionCity("london"));
     }
 
     @When("I get the weather ID")

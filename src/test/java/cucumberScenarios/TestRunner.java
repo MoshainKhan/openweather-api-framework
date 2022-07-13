@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "com.sparta.owframework.cucumberScenarios.stepdefs",
+        glue = "cucumberScenarios.stepdefs",
         plugin = {
                 "pretty", "html:target/testReport.html",
                 "json:target/jsonReport/json"
