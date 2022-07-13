@@ -1,5 +1,6 @@
 package com.sparta.owframework.frameworktests;
 
+
 import com.sparta.owframework.OWWeatherDTO.Coord;
 import com.sparta.owframework.OWWeatherDTO.Main;
 import com.sparta.owframework.OWWeatherDTO.Wind;
@@ -8,17 +9,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+
 public class FrameworkTests {
 
     Coord coord = new Coord();
     Main main = new Main();
 
     Wind wind = new Wind();
+    OWWeatherDTO owWeatherDTO = new OWWeatherDTO();
+    WeatherDTOHelper weatherDTOHelper = new WeatherDTOHelper();
 
 
 
-    @DisplayName("Coord") //F
     @Nested //F
+    @DisplayName("Coord") //F
     class CoordTests{ //A & F tests
 
         @Test
@@ -51,6 +55,8 @@ public class FrameworkTests {
 
         }
 
+
+
         @Test
         @DisplayName("Check that verifyLatRange ... within [-90, 90] ") //A
         void checkThatVerifyLatRangeNinety (){
@@ -58,6 +64,7 @@ public class FrameworkTests {
             //pass a value less than -90
             //do another one above 90
             // another {-90, 0}, 0, {0, 90}
+            Assertions.assertTrue(coord.isLatBetweenNeg90AndPos90());
         }
 
         @Test
@@ -67,6 +74,7 @@ public class FrameworkTests {
             //pass a value less than -180
             //do another one above 180
             // another {-180, 0}, 0, {0, 180}
+            Assertions.assertTrue(coord.isLongBetweenNeg180AndPos180());
         }
 
     }
@@ -82,28 +90,63 @@ public class FrameworkTests {
         }
     }
 
-    @DisplayName("Main") //F
     @Nested
+    @DisplayName("Main") //F
     class MainTests {
         @Test
-        @DisplayName("Check temp values are present")
+        @DisplayName("Check temp values is present")
         void TempPresent() {
 
-            Assertions.assertNotNull(main.getTemp());
+            Assertions.assertTrue(main.hasTemp());
         }
 
         @Test
-        @DisplayName("Check Temp Min values are present")
+        @DisplayName("Check Temp Min values is present")
         void TempMinPresent(){
 
-            Assertions.assertNotNull(main.getTempMin());
+            Assertions.assertTrue(main.hasTempMin());
         }
 
         @Test
         @DisplayName("Check feel like values are present")
         void FeelsLikeValuePresent(){
 
-            Assertions.assertNotNull(main.getFeelsLike());
+            Assertions.assertTrue(main.hasFeelsLike());
+        }
+
+        @Test
+        @DisplayName("Check temp max value is  present")
+        void MaxValueValuePresent(){
+
+            Assertions.assertTrue(main.hasTempMax());
+        }
+
+        @Test
+        @DisplayName("Check humidity value is  present")
+        void HumidityValuePresent(){
+
+            Assertions.assertTrue(main.hasHumidity());
+        }
+
+        @Test
+        @DisplayName("Check pressure value is  present")
+        void PressureValuePresent(){
+
+            Assertions.assertTrue(main.hasPressure());
+        }
+
+        @Test
+        @DisplayName("Check sea level value is  present")
+        void SeaLevelValuePresent(){
+
+            Assertions.assertTrue(main.hasSeaLevel());
+        }
+
+        @Test
+        @DisplayName("Check ground level value is  present")
+        void GroundLevelValuePresent(){
+
+            Assertions.assertTrue(main.hasGrndLevel());
         }
         @Test
         @DisplayName("Check temp datatype")
@@ -128,15 +171,33 @@ public class FrameworkTests {
 
         }
 
+        @Test
+        @DisplayName("Temperature between the Temp minimum and maximum")
+        void TemperatureBetwnMinMax(){
+
+            Assertions.assertTrue(main.isTempBetweenTempMinAndMax());
+
+        }
+        @Test
+        @DisplayName("Pressure between 100 and 1100")
+        void PressureMinMax(){
+
+            Assertions.assertTrue(main.isPressureBetween100And1100());
+
+        }
 
 
     }
 
-
-    @DisplayName("") //F
     @Nested
+    @DisplayName("OWWeatherDTP")  //F
     class OWWeatherDTO{
+        @Test
+        @DisplayName("Id not null")
+        void IdNotNull() {
+            Assertions.assertNotNull(owWeatherDTO.has);
 
+            }
     }
 
     @DisplayName("Rain") //A
@@ -193,9 +254,16 @@ public class FrameworkTests {
 
     }
 
-    @DisplayName("WeatherDTOHelper") //F
+
     @Nested
+    @DisplayName("WeatherDTOHelper") //F
     class WeatherDTOHelper{
+
+        @Test
+        @DisplayName("between 0 and 100")
+        void Between0and100(){
+            Assertions.assertTrue(weatherDTOHelper.isbetween);
+        }
 
     }
 
@@ -205,18 +273,18 @@ public class FrameworkTests {
 
     }
 
-    @Nested
     @DisplayName("Wind")  //F
+    @Nested
+
     class WindTests {
         @Test
         @DisplayName("Check wind & gust values present and valid")
         void TempPresentAndValid() {
 
-            Assertions.assertNotNull(wind.getSpeed());
-            Assertions.assertNotNull(wind.getGust());
+            Assertions.assertTrue(wind.hasSpeed());
+            Assertions.assertTrue(wind.hasGust());
             Assertions.assertTrue(wind.validSpeedAndGust());
         }
-
             @Test
             @DisplayName("Gust is greater than wind speed")
             void GustGreaterThanWindSpeed() {
@@ -224,18 +292,20 @@ public class FrameworkTests {
                 Assertions.assertTrue(wind.isGustGreaterThanSpeed());
             }
 
-
         @Test
         @DisplayName("Degrees validity and present check")
         void DegreesValidityAndPresent() {
 
-            Assertions.assertNotNull(wind.getDeg());
+            Assertions.assertTrue(wind.hasDeg();
             Assertions.assertTrue(wind.isValidDegreesValue());
         }
 
+        @Test
+        @DisplayName("Deg not null")
+        void DegPresent() {
 
-
-
+            Assertions.assertNotNull(wind.getSpeed());
+        }
 
     }
 
