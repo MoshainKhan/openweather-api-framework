@@ -2,6 +2,7 @@ Feature: As a user, I want to be able to check the wind data to be able to check
 
   Background: Checking if the returned wind data is valid
     Given I have wind data in the JSON response
+
   Scenario: No wind gust
     When There is no gust data
     Then Gust should be null
