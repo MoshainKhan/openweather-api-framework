@@ -6,8 +6,5 @@ Feature: As a Tester,I want the framework that will check the values for visibil
 
     Scenario: checking the value for the visibility is between 0 and 10 km.
     When I test the visibility value
-    Then I should get a value between 0 and 10km
+    Then I should get a value between zero and ten km
 
-    Scenario: checking the value for the visibility is in meters.
-      When I test the visibility value
-      Then I should get a value is in meter.
