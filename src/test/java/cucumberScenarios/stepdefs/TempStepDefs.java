@@ -75,6 +75,6 @@ public class TempStepDefs {
 
     @Then("it should be within five degrees of the current temperature")
     public void itShouldBeWithinFiveDegreesOfTheCurrentTemperature() {
-        
+        Assertions.assertTrue(main.is5LessOr5More());
     }
 }
