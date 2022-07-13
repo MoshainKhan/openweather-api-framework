@@ -8,9 +8,9 @@ Feature: As a Tester, I want a Framework that will check if Sunrise and Sunset f
       Then the Sunrise value should always be before the Sunset value
 
     Scenario: Checking the Sunrise and Sunset values are the correct DataType.
-      When I test the Sunrise and Sunset values
-      Then they should be in the EPOC datatype
+      When I compare the Sunrise and Sunset values
+      Then they should be in the EPOC format
 
     Scenario: Checking the Sunrise Sunset values are not equal to null
-      When I check the Sunrise and Sunset values
+      When I compare the Sunrise and Sunset values
       Then they should NOT be equal to null
