@@ -35,6 +35,7 @@ public class LatLonStepDefs {
 
     @Then("I should receive a value with no more than {int} decimal places")
     public void iShouldReceiveAValueWithNoMoreThanFourDecimalPlaces() {
+        Assertions.assertTrue(coord.has4NumsAfterDecimalPoint(coord.getLat()));
 
     }
 
@@ -51,6 +52,7 @@ public class LatLonStepDefs {
 
     @Then("I should receive a value  with no more than {int} decimal places")
     public void iShouldReceiveAValueWithNoMoreThanDecimalPlaces() {
+        Assertions.assertTrue(coord.has4NumsAfterDecimalPoint(coord.getLon()));
     }
 
 
