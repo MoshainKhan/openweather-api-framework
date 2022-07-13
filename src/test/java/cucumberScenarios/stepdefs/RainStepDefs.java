@@ -5,6 +5,7 @@ import io.cucumber.java.en.When;
 public class RainStepDefs {
     @When("I test value for the rain in an hour")
     public void iTestValueForTheRainInAnHour() {
+
     }
 
     @Then("I should  return the double.")

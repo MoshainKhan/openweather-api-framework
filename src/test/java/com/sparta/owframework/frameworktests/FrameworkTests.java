@@ -154,7 +154,7 @@ public class FrameworkTests {
         void GroundLevelValuePresent(){
 
             Assertions.assertTrue(weatherDTO.getMain().hasGrndLevel());
-        }
+//        }
         @Test
         @DisplayName("Check temp datatype")
         void TempType(){

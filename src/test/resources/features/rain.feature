@@ -7,12 +7,12 @@ Feature: As a tester,I want to test  that I can see the rain volume for
 
   Scenario: checking the volume of the rain for 1 hour.
     When I test value for the rain in an hour
-    Then I should  return the double.
+    Then It should  return value in double.
 
   Scenario: checking the volume of the rain for 3 hours.
 
-    When I test value for the rain in 3 hours
-    Then I should  return the an double.
+    When I test value for the rain in "3" hours
+    Then It should  return value in  double.
 
   Scenario: checking the volume of the rain is in millimeter(mm).
 
