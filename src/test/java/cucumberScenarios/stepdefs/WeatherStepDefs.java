@@ -4,23 +4,35 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class WeatherStepDefs {
-    @Given("I have a JSON response including weather data")
-    public void iHaveAJSONResponseIncludingWeatherData() {
+    @Given("I have a weatherItem")
+    public void iHaveAWeatherItem() {
     }
 
-    @When("Main description is Thunderstorm")
-    public void mainDescriptionIsThunderstorm() {
+    @When("I get the weather ID")
+    public void iGetTheWeatherID() {
     }
 
-    @Then("ID should be between 200 and 232")
-    public void idShouldBeBetween200And232() {
+    @Then("Then it should within a valid range")
+    public void thenItShouldWithinAValidRange() {
     }
 
-    @Then("Description should contain Thunderstorm")
-    public void descriptionShouldContainThunderstorm() {
+    @When("I get the weather description")
+    public void iGetTheWeatherDescription() {
     }
 
-    @Then("icon should be {int}d")
-    public void iconShouldBe11D() {
+    @Then("It should be a valid description")
+    public void itShouldBeAValidDescription() {
+    }
+
+    @Then("It should have the correct corresponding description, main description and iconID")
+    public void itShouldHaveTheCorrectCorrespondingDescriptionMainDescriptionAndIconID() {
+    }
+
+    @When("I go get the weatherItem response")
+    public void iGoGetTheWeatherItemResponse() {
+    }
+
+    @Then("The fields should not be null")
+    public void theFieldsShouldNotBeNull() {
     }
 }
