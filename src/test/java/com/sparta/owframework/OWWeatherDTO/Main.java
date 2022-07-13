@@ -93,6 +93,11 @@ public class Main{
 		return feelsLike != null;
 	}
 
+	public boolean is5LessOr5More() {
+
+		return temp + 5 >= feelsLike && temp - 5 <= feelsLike;
+	}
+
 	public boolean isTempBetweenTempMinAndMax() {
 		return temp >= tempMin && temp <= tempMax;
 	}

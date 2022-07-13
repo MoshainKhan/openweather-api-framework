@@ -10,97 +10,91 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.Date;
+
 public class WeatherResponsePropertyStepDefs {
 
-    private int cityID;
 
-    Clouds clouds;
-    Coord coord;
-    Main main;
-    Rain rain;
-    Snow snow;
+
     OWWeatherDTO owWeatherDTO;
-    Sys sys;
-    WeatherDTOHelper weatherDTOHelper;
-    WeatherItem weatherItem;
-    Wind wind;
 
-
-
-    @Given("I have received a JSON response.")
+    @Given("I have received a JSON response")
     public void iHaveReceivedAJSONResponse() {
         owWeatherDTO = Injector.injectOWWeatherDTO(ConnectionManager.getConnectionCity("london"));
-
-
     }
 
     @When("I check the city ID")
     public void iCheckTheCityID() {
+        Assertions.assertTrue(owWeatherDTO.hasId());
     }
 
-    @Then("It should not return null")
+    @Then("It should return the correct data Type")
     public void iWantToMakeSureItHasReturnedTheCorrectDatatypeInt() {
-        Assertions.assertNotNull(cityID);
+        Assertions.assertInstanceOf(Number.class, owWeatherDTO.getId());
     }
 
 
     @When("I check the city name")
     public void iCheckTheCityName() {
+        Assertions.assertTrue(owWeatherDTO.hasName());
     }
 
     @Then("I want it to return a String")
-    public void iWantItToReturnAString() {
+    public void iWantItToReturnAString() { Assertions.assertInstanceOf(String.class, owWeatherDTO.getName());
     }
 
     @When("I check the cod number")
     public void iCheckTheCodNumber() {
+        Assertions.assertTrue(owWeatherDTO.hasCod());
     }
 
     @Then("I want it to return an int")
     public void iWantItToReturnAnInt() {
+        Assertions.assertInstanceOf(Number.class, owWeatherDTO.getCod());
     }
 
-    @And("I want it to return {int}")
-    public void iWantItToReturn(int arg0) {
+    @And("I want it to return 200")
+    public void iWantItToReturn() {
+        Assertions.assertEquals(200, owWeatherDTO.getCod());
     }
 
-    @When("I test the data type of dt")
+    @When("I check the value for dt")
     public void iTestTheDataTypeOfDt() {
+        Assertions.assertTrue(owWeatherDTO.hasDt());
+
     }
 
     @Then("I should receive an integer data type")
     public void iShouldReceiveAnIntegerDataType() {
+        Assertions.assertInstanceOf(Number.class, owWeatherDTO.getDt());
     }
 
-    @When("I test the value for dt")
-    public void iTestTheValueForDt() {
+
+    @Then("I should receive an integer not less than 0")
+    public void iShouldReceiveAnIntegerNotLessThan() {
+        Assertions.assertTrue(owWeatherDTO.getDt() > 0);
     }
 
-    @Then("I should receive an integer not less than {int}")
-    public void iShouldReceiveAnIntegerNotLessThan(int arg0) {
-    }
-
-    @Then("I should receive an integer representing a Unix time greater than the previous day")
-    public void iShouldReceiveAnIntegerRepresentingAUnixTimeGreaterThanThePreviousDay() {
-    }
-
-    @Then("I should receive an integer representing Unix time that is within the last {int} hours")
-    public void iShouldReceiveAnIntegerRepresentingUnixTimeThatIsWithinTheLastHours(int arg0) {
-    }
-
-    @Given("I receive a JSON response")
-    public void iReceiveAJSONResponse() {
+    @Then("The value should correspond with today's date")
+    public void iShouldReceiveAnIntegerRepresentingUnixTimeThatIsWithinTheLastHours() {
+        Assertions.assertTrue(owWeatherDTO.requestDateSentCorrect());
     }
 
     @When("I check the timezone")
     public void iCheckTheTimezone() {
+        Assertions.assertTrue(owWeatherDTO.hasTimeZone());
     }
 
-    @Then("I want to check it within the valid range  [{int}hours, +{int}hours] of UTC")
-    public void iWantToCheckItWithinTheValidRangeHoursHoursOfUTC(int arg0, int arg1) {
+    @Then("I want to check it within the valid range [-12hours, +14hours] of UTC")
+    public void iWantToCheckItWithinTheValidRangeHoursHoursOfUTC() {
+        Assertions.assertTrue(owWeatherDTO.isTimeZoneValid());
+
     }
 
-    @Then("It should be a multiple of {int}")
-    public void itShouldBeAMultipleOf(int arg0) {
+    @Then("It should be a multiple of 3600")
+    public void itShouldBeAMultipleOf() {
+        Assertions.assertTrue(owWeatherDTO.isMultipleOf3600());
     }
 }

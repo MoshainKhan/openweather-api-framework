@@ -1,7 +1,7 @@
 Feature: As a tester, I want a framework to test is the timezone returned in the response is valid, so that I can ensure it is correct in relation to UTC.
 
   Background: When looking at the data in the main response of the JSON:
-    Given I have received a JSON response.
+    Given I have received a JSON response
 
   Scenario: The timezone should be in the correct range of UTC
     When I check the timezone

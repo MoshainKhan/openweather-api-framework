@@ -1,0 +1,52 @@
+{
+  "coord": {
+    "lon": 90,
+    "lat": 180
+  },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "icon": "04d"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 302.07,
+    "feels_like": 301.51,
+    "temp_min": 301.08,
+    "temp_max": 303.53,
+    "pressure": 1021,
+    "humidity": 38
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 0.89,
+    "deg": 220,
+    "gust": 3.13
+  },
+  "clouds": {
+    "all": 100
+  },
+  "rain":{
+    "1h": 1.2,
+    "3h": 3.7
+  },
+  "snow":{
+    "1h": 2.2,
+    "3h": 4.7
+  },
+  "dt": 1657556961,
+  "sys": {
+    "type": 2,
+    "id": 2016075,
+    "country": "GB",
+    "sunrise": 1657511885,
+    "sunset": 1657571259
+  },
+  "timezone": 3600,
+  "id": 0,
+  "name": "Birmingham",
+  "cod": 200
+}
