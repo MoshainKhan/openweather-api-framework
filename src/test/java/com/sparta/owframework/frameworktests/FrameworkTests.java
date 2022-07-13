@@ -17,9 +17,10 @@ public class FrameworkTests {
 
 
 
-    @DisplayName("Coord")
-    @Nested
-    class CoordTests{
+    @DisplayName("Coord") //F
+    @Nested //F
+    class CoordTests{ //A & F tests
+
         @Test
         @DisplayName("Check Lon values are present")
         void LonValuePresent(){
@@ -49,9 +50,39 @@ public class FrameworkTests {
             Assertions.assertSame(Double.class,coord.getLon().getClass());
 
         }
+
+        @Test
+        @DisplayName("Check that verifyLatRange ... within [-90, 90] ") //A
+        void checkThatVerifyLatRangeNinety (){
+            //use mocking
+            //pass a value less than -90
+            //do another one above 90
+            // another {-90, 0}, 0, {0, 90}
+        }
+
+        @Test
+        @DisplayName("Check that verifyLongRange ... within [-180, 180] ") //A
+        void checkThatVerifyLongRangeOneEighty (){
+            //use mocking
+            //pass a value less than -180
+            //do another one above 180
+            // another {-180, 0}, 0, {0, 180}
+        }
+
     }
 
-    @DisplayName("Main")
+    @DisplayName("Clouds") //A
+    @Nested
+    class Clouds{
+        @Test
+        @DisplayName("Check that cloudValueIsInRange[0,100] ") //clouds
+        void checkThatCloudsPercentage (){
+            //mock clouds
+            //-, 0, 0-100, 100+
+        }
+    }
+
+    @DisplayName("Main") //F
     @Nested
     class MainTests {
         @Test
@@ -101,8 +132,81 @@ public class FrameworkTests {
 
     }
 
-    @DisplayName("Wind")
+
+    @DisplayName("") //F
     @Nested
+    class OWWeatherDTO{
+
+    }
+
+    @DisplayName("Rain") //A
+    @Nested
+    class Rain{
+        @Test
+        @DisplayName("Check that rainInMm ...") //RAIN
+        void checkThatRainInM (){
+            //mock rain
+            //pass some fake rain?
+        }
+
+        @Test
+        @DisplayName("Check that rainForLastHour")
+        void checkThatRainForLastHour (){
+        }
+
+        @Test
+        @DisplayName("Check that rainForLastThreeHours ")
+        void checkThatRainForLastThreeHour (){
+        }
+
+        @Test
+        @DisplayName("Check that rainTakeNull ")
+        void checkThatRainTakeNull (){
+        }
+    }
+
+    @DisplayName("Snow") //A
+    @Nested
+    class Snow{
+        @Test
+        @DisplayName("Check that  3 hours...")
+        void checkThatSnow3Hours (){
+
+        }
+
+        @Test
+        @DisplayName("Check that  1 hours...")
+        void checkThatSnow1Hours (){
+
+        }
+
+        @Test
+        @DisplayName("Check that snowNull")
+        void checkThatSnowNull (){
+        }
+
+    }
+
+    @DisplayName("Sys") //A
+    @Nested
+    class Sys{
+
+    }
+
+    @DisplayName("WeatherDTOHelper") //F
+    @Nested
+    class WeatherDTOHelper{
+
+    }
+
+    @DisplayName("") //A
+    @Nested
+    class WeatherItem{
+
+    }
+
+    @Nested
+    @DisplayName("Wind")  //F
     class WindTests {
         @Test
         @DisplayName("Check wind & gust values present and valid")
@@ -112,12 +216,14 @@ public class FrameworkTests {
             Assertions.assertNotNull(wind.getGust());
             Assertions.assertTrue(wind.validSpeedAndGust());
         }
+
             @Test
             @DisplayName("Gust is greater than wind speed")
             void GustGreaterThanWindSpeed() {
 
                 Assertions.assertTrue(wind.isGustGreaterThanSpeed());
             }
+
 
         @Test
         @DisplayName("Degrees validity and present check")
@@ -134,5 +240,62 @@ public class FrameworkTests {
     }
 
 
+    @DisplayName("Injector Tests") //A
+    @Nested
+    class CheckForValidEndpointReturns{
+        @Test
+        @DisplayName("Check that injector returns correct THING (DTO?) by city")
+        void checkThatValidReturnFromCityEndpoint (){
+            actualResponse = Injector.instructionstoInjectByCity(relevantConnectionManager);
+
+            Assertions.assertEquals(Response.class, actualResponse.getClass());
+        }
+
+        //repeat similar for different ?endpoints? need to see injector/connections manager first for understanding
 
     }
+
+    @DisplayName("Addi other tests") //A
+    @Nested
+    class PotentialDelete{
+//  - potentially duplicated, but to be checked at later date to ensure coverage
+
+        @Test
+        @DisplayName("Check that ensureIconValid ") //RESPONSE
+        void checkThatEnsureIconValid (){
+
+        }
+
+        @Test
+        @DisplayName("Check that checkHumidityRange") //HUMIDITY
+        void checkThatHumidityRange (){
+
+            // mock humidity
+            // pass this into something
+
+        }
+
+        @Test //VISIBILITY
+        @DisplayName("Check that methodToCheckVisibility ... positive for [0, 10K], false {-inf, 0}, {10K, inf}")
+        void checkThatMethodToCheckVisibility (){
+        }
+
+
+        @Test
+        @DisplayName("Check that checkDtWithin24Hours tests for past 24 hours ")
+        void checkThat (){
+            //may have additional internal methods to assist with this
+            //mock something
+
+        }
+
+    }
+
+
+
+
+
+
+}
+
+

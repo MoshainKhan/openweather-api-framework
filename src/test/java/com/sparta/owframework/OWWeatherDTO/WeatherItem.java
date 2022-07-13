@@ -32,19 +32,19 @@ public class WeatherItem {
 		return id;
 	}
 
-	public boolean isId() {
+	public boolean hasId() {
 		return id != null;
 	}
 
-	public boolean isIcon() {
+	public boolean hasIcon() {
 		return icon != null;
 	}
 
-	public boolean isDescription() {
+	public boolean hasDescription() {
 		return description != null;
 	}
 
-	public boolean isMain() {
+	public boolean hasMain() {
 		return main != null;
 	}
 
