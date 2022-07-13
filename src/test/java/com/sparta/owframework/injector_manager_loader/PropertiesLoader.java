@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesLoader {
-    public static Properties getProperties() {
+    public String getKeyFromProperties() {
 
         Properties properties = new Properties();
 
@@ -14,6 +14,6 @@ public class PropertiesLoader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return properties;
+        return properties.getProperty("password");
     }
 }
