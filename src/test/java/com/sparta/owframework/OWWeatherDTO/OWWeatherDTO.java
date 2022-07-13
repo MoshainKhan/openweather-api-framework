@@ -184,8 +184,15 @@ public class OWWeatherDTO {
 	public boolean requestDateSentCorrect() {
 		Date time = new Date((dt) * 1000L);
 		String requestDate = time.toString();
-		String currentDate = LocalDate.now().toString();
-		return requestDate.contains(currentDate);
+		String currentDate = new Date().toString();
+		String current = currentDate.substring(0, 11);
+		return requestDate.contains(current);
+	}
+
+	public boolean isTimeZoneValid (){
+		int minimumTimeZone = -43_200;
+		int maximumTimeZone = 50_400;
+		return (timezone >= minimumTimeZone && timezone <= maximumTimeZone);
 	}
 
 }

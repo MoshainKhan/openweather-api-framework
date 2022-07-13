@@ -19,11 +19,11 @@ public class Coord{
 	}
 
 	public boolean hasLong() {
-		return getLon() == null;
+		return getLon() != null;
 	}
 
 	public boolean hasLat() {
-		return getLon() == null;
+		return getLon() != null;
 	}
 
 
@@ -34,6 +34,13 @@ public class Coord{
 
 	public boolean isLongBetweenNeg180AndPos180() {
 		return lon >= -180  && lon <= 180;
+	}
+
+	public boolean has4NumsAfterDecimalPoint(double coord) {
+		String strCoord = String.valueOf(coord);
+		String dcmlChecker = strCoord.substring(strCoord.indexOf("."));
+		return dcmlChecker.length() == 4;
+
 	}
 
 }
