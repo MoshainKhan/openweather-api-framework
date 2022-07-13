@@ -11,11 +11,11 @@ Feature: As a tester, I want a framework that will check the values for clouds
   Scenario: Checking cloud is not negative
     Given I have a JSON response
     When I test the cloud percentage
-    Then I should get a value greater than 0
+    Then I should get a value greater than zero
 
   Scenario: Checking valid cloud outputs
     Given I have a JSON response
     When I test the cloud percentage
-    Then I should get a value between 0 and 100
+    Then I should get a value between zero and a hundred
 
 

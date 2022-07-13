@@ -9,8 +9,9 @@ Feature: As a tester,I want to test  that I can see the rain volume for
     When I test value for the rain in an hour
     Then It should  return value in double.
 
-  Scenario: checking the volume of the rain for 3 hours.
+  Scenario: checking the volume of the rain for three hours.
 
+h
     When I test value for the rain in "3" hours
     Then It should  return value in  double.
 
@@ -18,3 +19,4 @@ Feature: As a tester,I want to test  that I can see the rain volume for
 
     When I test value for the rain
     Then I should be in the correct format.
+
