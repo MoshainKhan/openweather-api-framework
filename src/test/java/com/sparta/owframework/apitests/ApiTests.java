@@ -6,7 +6,7 @@ import org.junit.jupiter.api.DisplayName;
 
 public class ApiTests {
 
-
+/*
     @Test
     @DisplayName("checkCorrectIdWhenLondonIsCalled")
     void checkCorrectIdWhenCallingLondon(){ Assertions.assertEquals(2643743, city_id);}
@@ -35,6 +35,8 @@ public class ApiTests {
 
 
 
+
+ */
 
 
     

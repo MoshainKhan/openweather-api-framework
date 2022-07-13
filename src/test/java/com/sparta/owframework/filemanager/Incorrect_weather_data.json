@@ -1,11 +1,10 @@
 {
   "coord": {
-    "lon": -122.08,
-    "lat": 37.39
+    "lon": -122.08
   },
   "weather": [
     {
-      "id": 800,
+      "id": 801,
       "main": "Clear",
       "description": "clear sky",
       "icon": "01d"
@@ -15,7 +14,7 @@
   "main": {
     "temp": 282.55,
     "feels_like": 281.86,
-    "temp_min": 280.37,
+    "temp_min": 289.37,
     "temp_max": 284.26,
     "pressure": 1023,
     "sea_level": 1018.18,
@@ -25,7 +24,7 @@
   "visibility": 10000,
   "wind": {
     "speed": 1.5,
-    "deg": 350
+    "deg": 366
   },
   "clouds": {
     "all": 1
@@ -33,10 +32,6 @@
   "rain":{
     "1h": 1.2,
     "3h": 3.7
-  },
-  "snow":{
-    "1h": 2.2,
-    "3h": 4.7
   },
   "dt": 1560350645,
   "sys": {
@@ -47,7 +42,7 @@
     "sunrise": 1560343627,
     "sunset": 1560396563
   },
-  "timezone": -25200,
+  "timezone": -25205,
   "id": 420006353,
   "name": "Mountain View",
   "cod": 200
