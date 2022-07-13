@@ -38,7 +38,7 @@ public class Coord{
 
 	public boolean has4NumsAfterDecimalPoint(double coord) {
 		String strCoord = String.valueOf(coord);
-		String dcmlChecker = strCoord.substring(strCoord.indexOf("."));
+		String dcmlChecker = strCoord.substring(strCoord.indexOf(".")+1);
 		return dcmlChecker.length() == 4;
 
 	}
