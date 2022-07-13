@@ -183,7 +183,7 @@ public class FrameworkTestsAddi {
         static void setupAll(){
             ObjectMapper mapper = new ObjectMapper();
             try {
-                weatherDTO = mapper.readValue(new File("src/test/java/com/sparta/owframework/filemanager/weather.json"), OWWeatherDTO.class);
+                weatherDTO = mapper.readValue(new File("src/test/java/com/sparta/owframework/filemanager/correct_weather_data.json"), OWWeatherDTO.class);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
