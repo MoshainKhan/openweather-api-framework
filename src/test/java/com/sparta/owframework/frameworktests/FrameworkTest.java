@@ -7,7 +7,7 @@ import org.junit.jupiter.api.*;
 import java.io.File;
 import java.io.IOException;
 
-public class FrameworkTestsPart2 {
+public class FrameworkTest {
     public static OWWeatherDTO weatherDTO;
     public static WeatherItem weatherItem;
 
