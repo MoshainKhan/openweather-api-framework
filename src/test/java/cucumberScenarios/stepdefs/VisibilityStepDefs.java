@@ -27,7 +27,7 @@ public class VisibilityStepDefs {
 
     @Then("I should get a value between zero and ten km")
     public void iShouldGetAValueBetweenZeroAndTenKm() {
-        Assertions.assertTrue(visibility >= 0 && visibility <= 10000);
+        Assertions.assertTrue(owWeatherDTO.isValidVisibilityBoundaries());
     }
 
 
