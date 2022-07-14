@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Assumptions;
 public class WindStepDefs {
     Wind wind;
     OWWeatherDTO owWeatherDTO;
-    double windSpeed;
+
 
 
     @Given("I have wind data in the JSON response")
@@ -24,7 +24,7 @@ public class WindStepDefs {
 
     @When("There is no gust data")
     public void thereIsNoGustData() {
-        System.out.println(wind.getGust());
+        Assumptions.assumeFalse(wind.hasGust());
     }
 
     @Then("Gust should be null")
@@ -34,28 +34,28 @@ public class WindStepDefs {
 
     @When("There is gust data")
     public void thereIsGustData() {
-        System.out.println(wind.getGust());
+        Assumptions.assumeTrue(wind.hasGust());
     }
 
     @Then("Gust should be greater than wind speed")
     public void gustShouldBeGreaterThanWindSpeed() {
-       Assumptions.assumeTrue(wind.isGustGreaterThanSpeed());
+       Assertions.assertTrue(wind.isGustGreaterThanSpeed());
     }
 
     @When("I check the wind speeds")
     public void iCheckTheWindSpeeds() {
-        windSpeed = wind.getSpeed();
+        Assumptions.assumeTrue(wind.hasSpeed());
 
     }
 
     @Then("They should be greater than 0")
     public void theyShouldBeGreaterThan() {
-        Assertions.assertTrue(windSpeed >0);
+        Assertions.assertTrue(wind.validSpeedAndGust());
     }
 
     @When("I check the wind direction")
     public void iCheckTheWindDirection() {
-        System.out.println(wind.getDeg());
+        Assumptions.assumeTrue(wind.hasDeg());
     }
 
     @Then("The value should be between 0 and 360")
