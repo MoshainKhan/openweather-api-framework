@@ -20,8 +20,7 @@ public class SnowStepDefs {
 
     @When("I check the snow values")
     public void iCheckTheSnowValues() {
-        Assumptions.assumeTrue(snow.hasJsonMember1h());
-        Assumptions.assumeTrue(snow.hasJsonMember3h());
+        Assumptions.assumeTrue(owWeatherDTO.hasSnow());
     }
 
     @Then("it should return the values which are double")
