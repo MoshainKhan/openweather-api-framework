@@ -1,7 +1,7 @@
 {
   "coord": {
-    "lon": -122.08,
-    "lat": 37.39
+    "lon": -0.1257,
+    "lat": 51.5085
   },
   "weather": [
     {
@@ -25,7 +25,8 @@
   "visibility": 10000,
   "wind": {
     "speed": 1.5,
-    "deg": 350
+    "deg": 350,
+    "gust": 2.3
   },
   "clouds": {
     "all": 1
@@ -43,12 +44,12 @@
     "type": 1,
     "id": 5122,
     "message": 0.0139,
-    "country": "US",
+    "country": "UK",
     "sunrise": 1560343627,
     "sunset": 1560396563
   },
-  "timezone": -25200,
-  "id": 420006353,
-  "name": "Mountain View",
+  "timezone": 3600,
+  "id": 2643743,
+  "name": "London",
   "cod": 200
 }
