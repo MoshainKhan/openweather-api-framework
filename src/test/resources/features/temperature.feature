@@ -27,9 +27,9 @@ Feature: As a Tester, I want a Framework that will ensure the temperatures are v
       When I check the current temperature value
       Then It should be equal to or less than MAX
 
-    Scenario: Checking the feels like temperature is within 5 of the current temperature
+    Scenario: Checking the feels like temperature is within five of the current temperature
       When I check the feels like temperature value
-      Then it should be within 5 degrees of the current temperature
+      Then it should be within five degrees of the current temperature
 
      Scenario: Checking the feels like temperature is equal to or more than MIN
       When I check the feels like temperature value

@@ -2,6 +2,8 @@ package com.sparta.owframework.OWWeatherDTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.time.LocalDate;
+
 public class Sys{
 
 	@JsonProperty("country")
@@ -83,5 +85,8 @@ public class Sys{
 		} else {
 			return false;
 		}
+	}
+	public LocalDate convertEpocToLocal(int epocTime) {
+		return LocalDate.ofEpochDay(epocTime);
 	}
 }

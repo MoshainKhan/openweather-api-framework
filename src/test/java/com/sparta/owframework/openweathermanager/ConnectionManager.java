@@ -1,4 +1,4 @@
-package com.sparta.owframework.injector_manager_loader;
+package com.sparta.owframework.openweathermanager;
 
 import java.io.IOException;
 import java.net.URI;
@@ -7,7 +7,11 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 public class ConnectionManager {
     private static final String BASEURL = "https://api.openweathermap.org/data/2.5/weather?";
-    private static final String APIKEY = PropertiesLoader.getProperties().getProperty("password");
+    private static String APIKEY = new PropertiesLoader().getKeyFromProperties();
+
+    public static void assignNewKey(String key) {
+        APIKEY = key;
+    }
 
     public static String getConnection() {
         getResponse();
@@ -19,11 +23,11 @@ public class ConnectionManager {
     }
 
     public static String getConnectionCity(String city_name, String country_code) {
-        return getConnectionCity(city_name, Units.STANDARD) + "," + country_code;
+        return getConnectionCity(city_name, country_code, Units.STANDARD);
     }
 
     public static String getConnectionCity(String city_name, String state_code, String country_code) {
-        return getConnectionCity(city_name, Units.STANDARD) + "," + state_code + "," + country_code;
+        return getConnectionCity(city_name, state_code, country_code, Units.STANDARD);
     }
 
     public static String getConnectionId(int city_id) {
