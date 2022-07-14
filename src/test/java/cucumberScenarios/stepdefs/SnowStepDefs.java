@@ -25,7 +25,7 @@ public class SnowStepDefs {
 
     @Then("it should return the values which are double")
     public void itShouldReturnTheValuesWhichAreDouble() {
-        Assertions.assertInstanceOf(Double.class, snow.getJsonMember1h().getClass());
+        Assertions.assertInstanceOf(Double.class, snow.getJsonMember1h());
     }
 
     @Then("it should return a value equal to or more than zero")
