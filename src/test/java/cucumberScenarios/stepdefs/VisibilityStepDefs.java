@@ -1,5 +1,5 @@
 package cucumberScenarios.stepdefs;
-import com.sparta.owframework.OWWeatherDTO.*;
+import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
 import com.sparta.owframework.openweathermanager.ConnectionManager;
 import com.sparta.owframework.openweathermanager.Injector;
 import io.cucumber.java.en.Given;

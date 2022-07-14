@@ -1,8 +1,9 @@
 package cucumberScenarios.stepdefs;
 import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
 import com.sparta.owframework.OWWeatherDTO.WeatherItem;
-import com.sparta.owframework.injector_manager_loader.ConnectionManager;
-import com.sparta.owframework.injector_manager_loader.Injector;
+
+import com.sparta.owframework.openweathermanager.ConnectionManager;
+import com.sparta.owframework.openweathermanager.Injector;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -19,7 +20,7 @@ public class WeatherStepDefs {
     @Given("I have a weatherItem")
     public void iHaveAWeatherItem() {
         owWeatherDTO = Injector.injectOWWeatherDTO(ConnectionManager.getConnectionCity("london"));
-        weatherItem = owWeatherDTO.getWeather().get(0);
+        weatherItem = owWeatherDTO.getWeatherItem(0);
     }
 
     @When("I check the weather ID")

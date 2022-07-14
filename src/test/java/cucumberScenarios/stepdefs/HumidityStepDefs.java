@@ -25,18 +25,18 @@ public class HumidityStepDefs {
     }
     @When("I test the humidity field")
     public void iTestTheHumidityField() {
-        Assumptions.assumeTrue(main.hasHumidity());
+        Assumptions.assumeTrue(owWeatherDTO.getMain().hasHumidity());
 
     }
 
     @Then("I should receive an integer data type.")
     public void iShouldReceiveAnIntegerDataType() {
-        Assertions.assertInstanceOf(Integer.class, main.getHumidity());
+        Assertions.assertInstanceOf(Integer.class,owWeatherDTO.getMain().getHumidity().getClass());
     }
 
     @Then("I should receive a value between zero and hundred")
     public void iShouldReceiveAValueBetweenZeroAndHundred() {
-        Assertions.assertTrue(weatherDTOHelper.isBetween0And100(main.getHumidity()));
+        Assertions.assertTrue(weatherDTOHelper.isBetween0And100(owWeatherDTO.getMain().getHumidity()));
     }
 
 
