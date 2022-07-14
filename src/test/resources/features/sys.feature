@@ -20,3 +20,6 @@ Feature: As a tester I want the framework that checks the type,id,message,countr
     When I test value for the country code type
     Then the value should be in String.
 
+    Scenario: checking the system country code is a valid code
+    Then The value should correspond to a valid country
+

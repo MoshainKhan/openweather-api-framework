@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.sparta.owframework.filemanager.CountryCodesMap;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 
 public class Sys{
 
@@ -89,5 +90,9 @@ public class Sys{
 	}
 	public LocalDate convertEpocToLocal(int epocTime) {
 		return LocalDate.ofEpochDay(epocTime);
+	}
+
+	public boolean hasCountryCode() {
+		return CountryCodesMap.getCountryCodesMap().containsKey(country);
 	}
 }

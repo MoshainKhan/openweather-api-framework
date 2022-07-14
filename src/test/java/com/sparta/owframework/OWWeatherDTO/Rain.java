@@ -25,4 +25,7 @@ public class Rain{
 	public Double getJsonMember1h(){
 		return jsonMember1h;
 	}
+
+	public boolean rainisGreaterThanZero1h(){return jsonMember1h > 0;}
+	public boolean rainisGreaterThanZero3h(){return jsonMember3h > 0;}
 }

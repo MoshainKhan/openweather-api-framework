@@ -26,7 +26,8 @@ public class CountryCodesMap {
 
                     String code = line.substring(line.length()-2);
 
-                    countryCodes.put(name, code);
+                    countryCodes.put(code, name);
+
 
             }
 
@@ -35,4 +36,7 @@ public class CountryCodesMap {
         }
     return countryCodes;
     }
+
+
+
 }

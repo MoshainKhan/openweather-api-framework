@@ -34,6 +34,12 @@ public class RainStepDefs {
         Assertions.assertInstanceOf(Double.class, rain.getJsonMember1h());
     }
 
+    @Then("It should be greater than zero")
+    public void itShouldBeGreaterThanZero()  {
+        Assertions.assertTrue(rain.rainisGreaterThanZero1h());
+    }
+
+
     @When("I test value for the rain in three hours")
     public void iTestValueForTheRainInThreeHours() {
         Assumptions.assumeTrue(owWeatherDTO.hasRain());
@@ -49,5 +55,8 @@ public class RainStepDefs {
         Assertions.assertInstanceOf(Double.class, rain.getJsonMember3h());
     }
 
-
+    @Then("It should return a number greater than zero")
+    public void itShouldReturnANumberGreaterThanZero()   {
+        Assertions.assertTrue(rain.rainisGreaterThanZero3h());
+    }
 }
