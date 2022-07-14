@@ -2,7 +2,7 @@ Feature: As a tester I want the framework that checks the type,id,message,countr
           are valid so that I can test the values are valid.
 
   Background:checking the values are in correct data types
-    Given I have a JSON response
+    Given I have a weather JSON response
 
   Scenario: checking the system type is in integer.
     When I test value for the system type
@@ -10,7 +10,7 @@ Feature: As a tester I want the framework that checks the type,id,message,countr
 
   Scenario: checking the system id is in integer.
     When I test value for the ID type
-    Then the value should be in integer.
+    Then the value should be an integer.
 
   Scenario: checking the system message is in double.
     When I test value for the message type
@@ -20,6 +20,3 @@ Feature: As a tester I want the framework that checks the type,id,message,countr
     When I test value for the country code type
     Then the value should be in String.
 
-  Scenario: checking the system country code with actual country code.
-    When I test value for the country code type
-    Then the code should correspond with the correct country.
