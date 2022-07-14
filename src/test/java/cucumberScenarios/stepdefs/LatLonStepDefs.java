@@ -24,7 +24,7 @@ public class LatLonStepDefs {
     }
     @When("I test the lat field")
     public void iTestTheLatField() {
-        Assumptions.assumeTrue(owWeatherDTO.getCoord().hasLat());
+        Assumptions.assumeTrue(coord.hasLat());
     }
 
 
@@ -36,7 +36,7 @@ public class LatLonStepDefs {
 
     @When("I test the lon field")
     public void iTestTheLonField() {
-        Assumptions.assumeTrue(owWeatherDTO.getCoord().hasLong());
+        Assumptions.assumeTrue(coord.hasLong());
     }
 
     @Then("I should receive a value between minus180 and 180")
