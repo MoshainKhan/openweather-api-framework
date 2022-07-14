@@ -1,6 +1,5 @@
 package com.sparta.owframework.OWWeatherDTO;
 
-import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -90,7 +89,7 @@ public class OWWeatherDTO {
 		return snow;
 	}
 
-	public List<WeatherItem> getWeather(){
+	public List<WeatherItem> getWeatherItems(){
 		return weather;
 	}
 
@@ -170,6 +169,10 @@ public class OWWeatherDTO {
 
 	public boolean hasWind(){
 		return wind != null;
+	}
+
+	public WeatherItem getWeatherItem(int id) {
+		return weather.get(id);
 	}
 
 	public boolean isMultipleOf3600() {
