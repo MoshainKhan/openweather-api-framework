@@ -1,4 +1,4 @@
-package com.sparta.owframework.injector_manager_loader;
+package com.sparta.owframework.openweathermanager;
 
 public enum Units {
     METRIC("&units=metric"),

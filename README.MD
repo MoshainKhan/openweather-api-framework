@@ -8,7 +8,7 @@ A Java testing framework for the Open Weather API. The framework retrieves json 
 
 *IMPORTANT*
 
-To use this framework, you will need to first acquire an API key from [Open Weather](https://openweathermap.org/).
+To use this framework you will need to first acquire an API key from [Open Weather](https://openweathermap.org/). 
 Instructions on how to add your API key to the framework is outlined below.
 
 - [Java 14](https://www.oracle.com/uk/java/technologies/javase/jdk14-archive-downloads.html)
@@ -56,7 +56,7 @@ Instructions on how to add your API key to the framework is outlined below.
 ## API Key
 
 You will need to create a *.properties* file and include it within your project. You must then include this file in your *.gitignore* DO NOT PUSH YOUR PERSONAL KEY TO PUBLIC REPOSITORIES.
-Once you have acquired an API, add it to the file.
+Once you have acquired a key, add it to the file.
 
 *.properties*
 ```java 

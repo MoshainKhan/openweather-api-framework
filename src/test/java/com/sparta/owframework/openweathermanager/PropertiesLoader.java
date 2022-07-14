@@ -1,4 +1,4 @@
-package com.sparta.owframework.injector_manager_loader;
+package com.sparta.owframework.openweathermanager;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,7 +10,7 @@ public class PropertiesLoader {
         Properties properties = new Properties();
 
         try {
-            properties.load(new FileReader("src/test/java/com/sparta/owframework/injector_manager_loader/MUST_BE_IGNORED.properties"));
+            properties.load(new FileReader("src/test/java/com/sparta/owframework/openweathermanager/MUST_BE_IGNORED.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }

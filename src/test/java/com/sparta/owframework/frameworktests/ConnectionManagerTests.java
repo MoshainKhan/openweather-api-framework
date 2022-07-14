@@ -1,7 +1,7 @@
 package com.sparta.owframework.frameworktests;
 
-import com.sparta.owframework.injector_manager_loader.ConnectionManager;
-import com.sparta.owframework.injector_manager_loader.Units;
+import com.sparta.owframework.openweathermanager.ConnectionManager;
+import com.sparta.owframework.openweathermanager.Units;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
@@ -41,35 +41,31 @@ public class ConnectionManagerTests {
         @DisplayName("City variations")
         @Nested
         class cityVariations {
-            String cityNameStandard = base + "q=london" + key + Units.STANDARD.getValue();
-            String cityNameMetric = base + "q=london" + key + Units.METRIC.getValue();
-            String cityNameImperial = base + "q=london" + key + Units.IMPERIAL.getValue();
-
             @Test
             @DisplayName("check: getConnectionCity(name) returns correctly")
             void checkGetConnectionCityNameReturnsCorrectValue() {
-                assertEquals(cityNameStandard,
+                assertEquals(base + "q=london" + key + Units.STANDARD.getValue(),
                         ConnectionManager.getConnectionCity("london"));
             }
 
             @Test
             @DisplayName("check: getConnectionCity(name, standard) returns correctly")
             void checkGetConnectionCityNameStandardReturnsCorrectValue() {
-                assertEquals(cityNameStandard,
+                assertEquals(base + "q=london" + key + Units.STANDARD.getValue(),
                         ConnectionManager.getConnectionCity("london", Units.STANDARD));
             }
 
             @Test
             @DisplayName("check: getConnectionCity(name, metric) returns correctly")
             void checkGetConnectionCityNameMetricReturnsCityNameMetric() {
-                assertEquals(cityNameMetric,
+                assertEquals(base + "q=london" + key + Units.METRIC.getValue(),
                         ConnectionManager.getConnectionCity("london", Units.METRIC));
             }
 
             @Test
             @DisplayName("check: getConnectionCity(name, imperial) returns correctly")
             void checkGetConnectionCityNameImperialReturnsCityNameImperial() {
-                assertEquals(cityNameImperial,
+                assertEquals(base + "q=london" + key + Units.IMPERIAL.getValue(),
                         ConnectionManager.getConnectionCity("london", Units.IMPERIAL));
             }
 
