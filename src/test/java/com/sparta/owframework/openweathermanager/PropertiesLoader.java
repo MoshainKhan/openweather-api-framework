@@ -1,4 +1,4 @@
-package com.sparta.owframework.injector_manager_loader;
+package com.sparta.owframework.openweathermanager;
 
 import java.io.FileReader;
 import java.io.IOException;
