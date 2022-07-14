@@ -17,7 +17,7 @@ public class ApiTests {
 
     OWWeatherDTO weatherDTO;
 
-    com.sparta.owframework.OWWeatherDTO.Clouds clouds;
+    Clouds clouds;
     Coord coord;
     Main main;
     Rain rain;
@@ -119,7 +119,7 @@ public class ApiTests {
 
     @Nested
     @DisplayName("Clouds tests")
-    public class Clouds {
+    public class CloudsTests {
 
         @Test
         @DisplayName("Check all value within valid boundaries")
