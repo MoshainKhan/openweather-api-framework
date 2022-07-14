@@ -73,7 +73,7 @@ public class Sys{
 
 	public boolean isSunriseBeforeSunset() {
 		if (hasSunrise() && hasSunset()) {
-			return sunrise > sunset;
+			return sunrise < sunset;
 		} else {
 			return false;
 		}

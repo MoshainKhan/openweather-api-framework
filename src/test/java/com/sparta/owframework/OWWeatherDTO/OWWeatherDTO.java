@@ -195,4 +195,7 @@ public class OWWeatherDTO {
 		return (timezone >= minimumTimeZone && timezone <= maximumTimeZone);
 	}
 
+	public boolean isValidVisibilityBoundaries() {
+		return visibility >=0 && visibility <= 10000;
+	}
 }
