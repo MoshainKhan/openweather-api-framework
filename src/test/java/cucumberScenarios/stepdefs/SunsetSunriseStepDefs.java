@@ -1,12 +1,13 @@
 package cucumberScenarios.stepdefs;
 import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
 import com.sparta.owframework.OWWeatherDTO.Sys;
-import com.sparta.owframework.injector_manager_loader.ConnectionManager;
-import com.sparta.owframework.injector_manager_loader.Injector;
+import com.sparta.owframework.openweathermanager.ConnectionManager;
+import com.sparta.owframework.openweathermanager.Injector;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Assumptions;
 
 import java.text.DateFormat;
 import java.time.LocalDate;
@@ -24,8 +25,8 @@ public class SunsetSunriseStepDefs {
 
     @When("I compare the Sunrise and Sunset values")
     public void iCompareTheSunriseAndSunsetValues() {
-        Assertions.assertTrue(sys.hasSunset());
-        Assertions.assertTrue(sys.hasSunrise());
+        Assumptions.assumeTrue(sys.hasSunset());
+        Assumptions.assumeTrue(sys.hasSunrise());
     }
 
     @Then("the Sunrise value should always be before the Sunset value")

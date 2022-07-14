@@ -1,12 +1,13 @@
 package cucumberScenarios.stepdefs;
 import com.sparta.owframework.OWWeatherDTO.Main;
 import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
-import com.sparta.owframework.injector_manager_loader.ConnectionManager;
-import com.sparta.owframework.injector_manager_loader.Injector;
+import com.sparta.owframework.openweathermanager.ConnectionManager;
+import com.sparta.owframework.openweathermanager.Injector;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Assumptions;
 
 public class TempStepDefs {
 
@@ -21,8 +22,8 @@ public class TempStepDefs {
 
     @When("I compare the MIN to the MAX")
     public void iCompareTheMINToTheMAX() {
-        Assertions.assertTrue(main.hasTempMin());
-        Assertions.assertTrue(main.hasTempMax());
+        Assumptions.assumeTrue(main.hasTempMin());
+        Assumptions.assumeTrue(main.hasTempMax());
     }
 
     @Then("the MIN should be smaller than the MAX")
@@ -32,7 +33,7 @@ public class TempStepDefs {
 
     @When("I check the current temperature value")
     public void iCheckTheCurrentTemperatureValue() {
-        Assertions.assertTrue(main.hasTemp());
+        Assumptions.assumeTrue(main.hasTemp());
     }
 
     @Then("It should be between the MIN and MAX")
@@ -42,7 +43,7 @@ public class TempStepDefs {
 
     @When("I check the temperature value")
     public void iCheckTheTemperatureValue() {
-        Assertions.assertTrue(main.hasTemp());
+        Assumptions.assumeTrue(main.hasTemp());
     }
 
     @Then("It should return a double")
@@ -69,7 +70,7 @@ public class TempStepDefs {
 
     @When("I check the feels like temperature value")
     public void iCheckTheFeelsLikeTemperatureValue() {
-        Assertions.assertTrue(main.hasFeelsLike());
+        Assumptions.assumeTrue(main.hasFeelsLike());
     }
 
 
