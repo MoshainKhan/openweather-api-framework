@@ -1,6 +1,7 @@
 package cucumberScenarios.stepdefs;
 import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
 import com.sparta.owframework.OWWeatherDTO.Sys;
+import com.sparta.owframework.filemanager.CountryCodesMap;
 import com.sparta.owframework.openweathermanager.ConnectionManager;
 import com.sparta.owframework.openweathermanager.Injector;
 import io.cucumber.java.en.Given;
@@ -57,5 +58,11 @@ public class SysStepDefs {
     @Then("the value should be in String.")
     public void theValueShouldBeInString() {
         Assertions.assertInstanceOf(String.class, sys.getCountry());
+    }
+
+    @Then("The value should correspond to a valid country")
+    public void theValueShouldCorrespondToAValidCountry() {
+        Assertions.assertTrue(CountryCodesMap.getCountryCodesMap().containsKey(sys.getCountry()));
+
     }
 }
