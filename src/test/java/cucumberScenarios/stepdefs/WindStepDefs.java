@@ -50,7 +50,7 @@ public class WindStepDefs {
 
     @Then("They should be greater than 0")
     public void theyShouldBeGreaterThan() {
-        Assertions.assertTrue(wind.validSpeedAndGust());
+        Assertions.assertTrue(wind.getSpeed() > 0);
     }
 
     @When("I check the wind direction")

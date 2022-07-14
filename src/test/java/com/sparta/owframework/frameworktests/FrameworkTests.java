@@ -191,7 +191,7 @@ public class FrameworkTests {
 
                 Assertions.assertTrue(weatherDTO.getWind().hasSpeed());
                 Assertions.assertTrue(weatherDTO.getWind().hasGust());
-                Assertions.assertTrue(weatherDTO.getWind().validSpeedAndGust());
+                Assertions.assertTrue(weatherDTO.getWind().getSpeed()>0);
             }
 
             @Test
