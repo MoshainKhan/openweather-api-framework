@@ -2,7 +2,7 @@ package com.sparta.owframework.apitests;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sparta.owframework.OWWeatherDTO.*;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -15,22 +15,22 @@ import java.util.List;
 
 public class ApiTests {
 
-    OWWeatherDTO weatherDTO;
+    static OWWeatherDTO weatherDTO;
 
-    Clouds clouds;
-    Coord coord;
-    Main main;
-    Rain rain;
-    Snow snow;
-    Sys sys;
-    List<WeatherItem> weatherItems;
-    Wind wind;
+    static Clouds clouds;
+    static Coord coord;
+    static Main main;
+    static Rain rain;
+    static Snow snow;
+    static Sys sys;
+    static List<WeatherItem> weatherItems;
+    static Wind wind;
 
 
     @BeforeAll
     @DisplayName("Setup weatherDTO object using example json response.")
-    void setUp() {
-        OWWeatherDTO weatherDTO = null;
+    static void setUp() {
+        weatherDTO = null;
         ObjectMapper mapper = new ObjectMapper();
         try {
             weatherDTO = mapper.readValue(new File("src/test/java/com/sparta/owframework/filemanager/correct_weather_data.json"), OWWeatherDTO.class);
@@ -50,7 +50,7 @@ public class ApiTests {
 
     @Nested
     @DisplayName("OWWeatherDTO tests")
-    public class OWWeatherDTOTests {
+    public class OWWeatherDTOTesting {
 
         @Test
         @DisplayName("check cod is a valid status code")
