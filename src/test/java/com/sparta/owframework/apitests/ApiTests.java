@@ -82,7 +82,6 @@ public class ApiTests {
         }
 
 
-
         @Test
         @DisplayName("check cod is a valid status code")
         void checkCodIsValidStatusCode() {
@@ -159,7 +158,14 @@ public class ApiTests {
     }
 
     @Test
-    @DisplayName()
+    @DisplayName("CheckTimezoneInRange")
+    void checkTimezoneInRange() {
+        Assertions.assertTrue(weatherDTO.isTimeZoneValid());
+    }
+
+    @Test
+    @DisplayName("CheckCountryCodeIsInMap")
+    void
 
 
 
