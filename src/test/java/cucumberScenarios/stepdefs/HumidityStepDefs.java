@@ -21,6 +21,7 @@ public class HumidityStepDefs {
     @Given("I have humidity data in a JSON response")
     public void iHaveHumidityDataInAJSONResponse() {
         owWeatherDTO = Injector.injectOWWeatherDTO(ConnectionManager.getConnectionCity("london"));
+        weatherDTOHelper = new WeatherDTOHelper();
         main =  owWeatherDTO.getMain();
     }
     @When("I test the humidity field")
