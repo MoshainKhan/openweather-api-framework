@@ -10,7 +10,7 @@ public class PropertiesLoader {
         Properties properties = new Properties();
 
         try {
-            properties.load(new FileReader("src/test/java/com/sparta/owframework/openweathermanager/MUST_BE_IGNORED.properties"));
+            properties.load(new FileReader("src/test/resources/MUST_BE_IGNORED.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
