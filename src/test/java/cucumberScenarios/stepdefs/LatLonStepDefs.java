@@ -2,9 +2,9 @@ package cucumberScenarios.stepdefs;
 
 import com.sparta.owframework.OWWeatherDTO.Coord;
 import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
-import com.sparta.owframework.OWWeatherDTO.Wind;
-import com.sparta.owframework.injector_manager_loader.ConnectionManager;
-import com.sparta.owframework.injector_manager_loader.Injector;
+
+import com.sparta.owframework.openweathermanager.ConnectionManager;
+import com.sparta.owframework.openweathermanager.Injector;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
