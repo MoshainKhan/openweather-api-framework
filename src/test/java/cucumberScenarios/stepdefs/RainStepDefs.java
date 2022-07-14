@@ -26,7 +26,7 @@ public class RainStepDefs {
 
     @When("I test value for the rain in an hour")
     public void iTestValueForTheRainInAnHour() {
-        Assumptions.assumeTrue(rain.hasJsonMember1h());
+        Assumptions.assumeTrue(owWeatherDTO.hasRain());
     }
 
     @Then("It should  return value in double.")
@@ -36,7 +36,7 @@ public class RainStepDefs {
 
     @When("I test value for the rain in three hours")
     public void iTestValueForTheRainInThreeHours() {
-        Assumptions.assumeTrue(rain.hasJsonMember3h());
+        Assumptions.assumeTrue(owWeatherDTO.hasRain());
     }
 
     @Then("I should be in the correct format.")
