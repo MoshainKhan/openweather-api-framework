@@ -52,11 +52,11 @@ public class Wind{
 		}
 	}
 
-	public boolean validSpeedAndGust() {
+	public boolean isGust0OrGreater() {
 		if (hasGust()) {
-			return speed >= 0 && gust >= 0;
-		} else {
 			return speed >= 0;
+		} else {
+			return false;
 		}
 	}
 }

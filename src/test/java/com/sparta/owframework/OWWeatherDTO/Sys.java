@@ -1,6 +1,7 @@
 package com.sparta.owframework.OWWeatherDTO;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.sparta.owframework.filemanager.CountryCodesMap;
 
 import java.time.LocalDate;
 

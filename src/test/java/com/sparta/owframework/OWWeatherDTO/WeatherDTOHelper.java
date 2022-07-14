@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class WeatherDTOHelper {
 
-    public boolean isBetween0And100(Integer number) {
+    public static boolean isBetween0And100(Integer number) {
         return number >= 0 && number <= 100;
     }
 
