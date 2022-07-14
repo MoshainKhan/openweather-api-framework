@@ -56,7 +56,6 @@ public class FrameworkTests {
         }
 
 
-
         @Test
         @DisplayName("Check that verifyLatRange ... within [-90, 90] ") //A
         void checkThatVerifyLatRangeNinety (){

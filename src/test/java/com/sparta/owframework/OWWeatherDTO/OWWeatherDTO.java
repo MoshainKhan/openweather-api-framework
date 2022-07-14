@@ -188,4 +188,7 @@ public class OWWeatherDTO {
 		return requestDate.contains(currentDate);
 	}
 
+	public boolean isValidVisibilityBoundaries() {
+		return visibility >=0 && visibility <= 10000;
+	}
 }
