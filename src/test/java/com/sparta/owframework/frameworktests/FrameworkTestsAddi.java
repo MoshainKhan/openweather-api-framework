@@ -3,7 +3,6 @@ package com.sparta.owframework.frameworktests;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sparta.owframework.OWWeatherDTO.*;
 import org.junit.jupiter.api.*;
-import org.junit.jupiter.params.ParameterizedTest;
 
 import java.io.File;
 import java.io.IOException;
