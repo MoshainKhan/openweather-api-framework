@@ -1,7 +1,7 @@
 {
   "coord": {
-    "lon": -90,
-    "lat": -180
+    "lon": -180,
+    "lat": -90
   },
   "weather": [
     {
@@ -14,7 +14,7 @@
   "base": "stations",
   "main": {
     "temp": 302.07,
-    "feels_like": 301.51,
+    "feels_like": 297.07,
     "temp_min": 301.08,
     "temp_max": 303.53,
     "pressure": 1021,

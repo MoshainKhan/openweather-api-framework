@@ -15,7 +15,7 @@ public class FrameworkTestsPart2 {
 
     @DisplayName("Testing boundary (below minimum)")
     @Nested
-    class outOfBoundMinimum{
+    class OutOfBoundMinimum {
         @BeforeAll
         static void setupAll(){
             ObjectMapper mapper = new ObjectMapper();
@@ -42,12 +42,6 @@ public class FrameworkTestsPart2 {
                 Assertions.assertFalse(weatherDTO.getCoord().isLongBetweenNeg180AndPos180());
             }
 
-            @Disabled("Cannot find method for cloud percentage checker")
-            @Test
-            @DisplayName("Check that clouds is false for lower than ")
-            void checkThatCloudsIsFalseForLowerThan (){
-                //   Assertions.assertFalse(weatherDTO.getClouds());
-            }
         }
 
         @DisplayName("Sys below bound")
@@ -57,6 +51,17 @@ public class FrameworkTestsPart2 {
             @DisplayName("Check that hasExactlyTwoChars false if country.length < 2 ")
             void checkThatHasExactlyTwoCharsFalseIfCountryLessThanTwo (){
                 Assertions.assertFalse(weatherDTO.getSys().hasExactlyTwoChars());
+            }
+
+        }
+
+        @DisplayName("Main below bound")
+        @Nested
+        class MainBelowBound{
+            @Test
+            @DisplayName("Check that is5LessOr5More false for more than 5 below")
+            void checkThatis5LessOr5MoreIsFalseForMoreThan5Below (){
+                Assertions.assertFalse(weatherDTO.getMain().is5LessOr5More());
             }
 
         }
@@ -108,6 +113,17 @@ public class FrameworkTestsPart2 {
 
         }
 
+        @DisplayName("Main above bound")
+        @Nested
+        class MainAboveBound{
+            @Test
+            @DisplayName("Check that is5LessOr5More false for more than 5 above")
+            void checkThatis5LessOr5MoreIsFalseForMoreThan5Above (){
+                Assertions.assertFalse(weatherDTO.getMain().is5LessOr5More());
+            }
+
+        }
+
 
     }
 
@@ -142,11 +158,22 @@ public class FrameworkTestsPart2 {
             }
         }
 
+        @DisplayName("Main on min bound")
+        @Nested
+        class MainOnMinBound{
+            @Test
+            @DisplayName("Check that is5LessOr5More true for exactly 5 below")
+            void checkThatis5LessOr5MoreIsTrueForExactly5Below (){
+                Assertions.assertTrue(weatherDTO.getMain().is5LessOr5More());
+            }
+
+        }
+
     }
 
     @DisplayName("Testing boundary (on max bound)")
     @Nested
-    class boundaryValueMax{
+    class BoundaryValueMax {
         @BeforeAll
         static void setupAll(){
             ObjectMapper mapper = new ObjectMapper();
@@ -173,6 +200,17 @@ public class FrameworkTestsPart2 {
             }
         }
 
+        @DisplayName("Main on max bound")
+        @Nested
+        class MainOnMaxBound{
+            @Test
+            @DisplayName("Check that is5LessOr5More true for exactly 5 above")
+            void checkThatis5LessOr5MoreIsTrueForExactly5Above (){
+                Assertions.assertTrue(weatherDTO.getMain().is5LessOr5More());
+            }
+
+        }
+
     }
 
     @DisplayName("Testing invalid values (e.g. min < max) ")
@@ -186,6 +224,8 @@ public class FrameworkTestsPart2 {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            weatherItem = weatherDTO.getWeatherItem(0);
+          //  weatherItem = weatherDTO.getWeather().get(0);
         }
 
         @DisplayName("Sys invalid")
@@ -197,10 +237,8 @@ public class FrameworkTestsPart2 {
             void checkThatIsSunriseBeforeSunsetFalseForSunsetFirst (){
                 Assertions.assertFalse(weatherDTO.getSys().isSunriseBeforeSunset());
             }
-
         }
 
-        @Disabled("Unsure of using weatherItem")
         @DisplayName("WeatherItem invalid")
         @Nested
         class WeatherItemInvalid{
@@ -216,7 +254,7 @@ public class FrameworkTestsPart2 {
 
     @DisplayName("Testing within boundary")
     @Nested
-    class withinBoundary{
+    class WithinBoundary {
         @BeforeAll
         static void setupAll(){
             ObjectMapper mapper = new ObjectMapper();
@@ -226,7 +264,7 @@ public class FrameworkTestsPart2 {
                 throw new RuntimeException(e);
             }
 
-            //  weatherItem = (com.sparta.owframework.OWWeatherDTO.WeatherItem) weatherDTO.getWeather();
+            weatherItem = weatherDTO.getWeatherItem(0);
         }
 
         @DisplayName("Coord within bounds")
@@ -247,17 +285,19 @@ public class FrameworkTestsPart2 {
 
         @DisplayName("Rain")
         @Nested
-        class Rain{
+        class RainInBoundary{
 
             @Test
             @DisplayName("Check that hasJsonMember1h returns true for non-empty values ")
             void checkThatHasJsonMember1hTrueNonEmpty (){
+                Assumptions.assumeTrue(weatherDTO.hasRain());
                 Assertions.assertTrue(weatherDTO.getRain().hasJsonMember1h());
             }
 
             @Test
             @DisplayName("Check that hasJsonMember3h true for non-empty values ")
             void checkThatHasJsonMember3hTrueNonEmpty (){
+                Assumptions.assumeTrue(weatherDTO.hasRain());
                 Assertions.assertTrue(weatherDTO.getRain().hasJsonMember3h());
             }
 
@@ -265,17 +305,19 @@ public class FrameworkTestsPart2 {
 
         @DisplayName("Snow")
         @Nested
-        class Snow{
+        class SnowInBoundary{
 
             @Test
             @DisplayName("Check that hasJsonMember1h returns true for non-empty values ")
             void checkThatHasJsonMember1hTrueNonEmptySnow (){
+                Assumptions.assumeTrue(weatherDTO.hasSnow());
                 Assertions.assertTrue(weatherDTO.getSnow().hasJsonMember1h());
             }
 
             @Test
             @DisplayName("Check that hasJsonMember3h true for non-empty values ")
             void checkThatHasJsonMember3hTrueNonEmptySnow (){
+                Assumptions.assumeTrue(weatherDTO.hasSnow());
                 Assertions.assertTrue(weatherDTO.getSnow().hasJsonMember3h());
             }
 
@@ -283,7 +325,7 @@ public class FrameworkTestsPart2 {
 
         @DisplayName("Sys")
         @Nested
-        class Sys{
+        class SysInBoundary{
 
             @Test
             @DisplayName("Check that hasCountry true for non-null country")
@@ -337,11 +379,22 @@ public class FrameworkTestsPart2 {
 
         }
 
-        /*
-        @Disabled("Unsure of using weatherItem")
+        @DisplayName("Main in Boundary")
+        @Nested
+        class MainInBoundary{
+            @Test
+            @DisplayName("Check that is5LessOr5More true for within 5 of temp ")
+            void checkThatis5LessOr5MoreIsTrueForWithin5OfTemp (){
+                Assertions.assertTrue(weatherDTO.getMain().is5LessOr5More());
+            }
+
+        }
+
         @DisplayName("WeatherItem")
         @Nested
         class WeatherItem{
+
+
 
             @Test
             @DisplayName("Check that hasId true if not null ID ")
@@ -376,9 +429,43 @@ public class FrameworkTestsPart2 {
 
 
         }
-
-         */
     }
+
+    @DisplayName("Testing incorrect precision")
+    @Nested
+    class IncorrectPrecision{
+
+        @BeforeAll
+        static void setupAll() {
+            ObjectMapper mapper = new ObjectMapper();
+            try {
+                weatherDTO = mapper.readValue(new File("src/test/java/com/sparta/owframework/filemanager/correct_weather_data.json"), OWWeatherDTO.class);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+        @Test
+        @DisplayName("Check that has4NumsAfterDecimalPoint false for > 4 after decimal point")
+        void checkThatHas4NumsAfterDecimalPointFalseForMoreThan4 (){
+            Assertions.assertFalse(weatherDTO.getCoord().has4NumsAfterDecimalPoint(4.12345));
+        }
+
+        @Test
+        @DisplayName("Check that has4NumsAfterDecimalPoint false for , 4 after decimal point")
+        void checkThatHas4NumsAfterDecimalPointFalseForLessThan4 (){
+            Assertions.assertFalse(weatherDTO.getCoord().has4NumsAfterDecimalPoint(4.123));
+        }
+
+        @Test
+        @DisplayName("Check that has4NumsAfterDecimalPoint true for exactly 4 after decimal point")
+        void checkThatHas4NumsAfterDecimalPointTrueFor4 (){
+            Assertions.assertTrue(weatherDTO.getCoord().has4NumsAfterDecimalPoint(4.1234));
+        }
+
+    }
+
+
 
 
 

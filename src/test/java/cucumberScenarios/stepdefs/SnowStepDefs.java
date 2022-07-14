@@ -30,7 +30,7 @@ public class SnowStepDefs {
 
     @Then("it should return a value equal to or more than zero")
     public void itShouldReturnAValueEqualToOrMoreThanZero() {
-        Assertions.assertTrue(snow.getJsonMember1h() >= 0);
+        Assertions.assertTrue(snow.snowIsGreaterThanZero1h());
     }
 
     @When("I check the snow values for three hours")
@@ -46,6 +46,6 @@ public class SnowStepDefs {
 
     @Then("It should return a value greater than zero")
     public void itShouldReturnAValueGreaterThanZero()  {
-        Assertions.assertTrue(snow.getJsonMember3h() >= 0);
+        Assertions.assertTrue(snow.snowIsGreaterThanZero3h());
     }
 }
