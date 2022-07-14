@@ -186,6 +186,7 @@ public class FrameworkTestsPart2 {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+            weatherItem = weatherDTO.getWeather().get(0);
         }
 
         @DisplayName("Sys invalid")
@@ -197,10 +198,8 @@ public class FrameworkTestsPart2 {
             void checkThatIsSunriseBeforeSunsetFalseForSunsetFirst (){
                 Assertions.assertFalse(weatherDTO.getSys().isSunriseBeforeSunset());
             }
-
         }
 
-        @Disabled("Unsure of using weatherItem")
         @DisplayName("WeatherItem invalid")
         @Nested
         class WeatherItemInvalid{
@@ -226,7 +225,7 @@ public class FrameworkTestsPart2 {
                 throw new RuntimeException(e);
             }
 
-            //  weatherItem = (com.sparta.owframework.OWWeatherDTO.WeatherItem) weatherDTO.getWeather();
+            weatherItem = weatherDTO.getWeather().get(0);
         }
 
         @DisplayName("Coord within bounds")
@@ -252,12 +251,14 @@ public class FrameworkTestsPart2 {
             @Test
             @DisplayName("Check that hasJsonMember1h returns true for non-empty values ")
             void checkThatHasJsonMember1hTrueNonEmpty (){
+                Assumptions.assumeTrue(weatherDTO.hasRain());
                 Assertions.assertTrue(weatherDTO.getRain().hasJsonMember1h());
             }
 
             @Test
             @DisplayName("Check that hasJsonMember3h true for non-empty values ")
             void checkThatHasJsonMember3hTrueNonEmpty (){
+                Assumptions.assumeTrue(weatherDTO.hasRain());
                 Assertions.assertTrue(weatherDTO.getRain().hasJsonMember3h());
             }
 
@@ -270,12 +271,14 @@ public class FrameworkTestsPart2 {
             @Test
             @DisplayName("Check that hasJsonMember1h returns true for non-empty values ")
             void checkThatHasJsonMember1hTrueNonEmptySnow (){
+                Assumptions.assumeTrue(weatherDTO.hasSnow());
                 Assertions.assertTrue(weatherDTO.getSnow().hasJsonMember1h());
             }
 
             @Test
             @DisplayName("Check that hasJsonMember3h true for non-empty values ")
             void checkThatHasJsonMember3hTrueNonEmptySnow (){
+                Assumptions.assumeTrue(weatherDTO.hasSnow());
                 Assertions.assertTrue(weatherDTO.getSnow().hasJsonMember3h());
             }
 
@@ -337,11 +340,11 @@ public class FrameworkTestsPart2 {
 
         }
 
-        /*
-        @Disabled("Unsure of using weatherItem")
         @DisplayName("WeatherItem")
         @Nested
         class WeatherItem{
+
+
 
             @Test
             @DisplayName("Check that hasId true if not null ID ")
@@ -376,8 +379,6 @@ public class FrameworkTestsPart2 {
 
 
         }
-
-         */
     }
 
 
