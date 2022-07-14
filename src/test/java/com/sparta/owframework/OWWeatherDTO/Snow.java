@@ -25,4 +25,7 @@ public class Snow{
 	public Double getJsonMember1h(){
 		return jsonMember1h;
 	}
+
+	public boolean snowIsGreaterThanZero1h(){return jsonMember1h > 0;}
+	public boolean snowIsGreaterThanZero3h(){return jsonMember3h > 0;}
 }
