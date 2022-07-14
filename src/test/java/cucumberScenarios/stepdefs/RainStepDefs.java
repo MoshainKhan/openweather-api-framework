@@ -36,7 +36,7 @@ public class RainStepDefs {
 
     @Then("It should be greater than zero")
     public void itShouldBeGreaterThanZero()  {
-        Assertions.assertTrue(rain.getJsonMember1h() >= 0);
+        Assertions.assertTrue(rain.rainisGreaterThanZero1h());
     }
 
 
@@ -57,6 +57,6 @@ public class RainStepDefs {
 
     @Then("It should return a number greater than zero")
     public void itShouldReturnANumberGreaterThanZero()   {
-        Assertions.assertTrue(rain.getJsonMember3h() >= 0);
+        Assertions.assertTrue(rain.rainisGreaterThanZero3h());
     }
 }
