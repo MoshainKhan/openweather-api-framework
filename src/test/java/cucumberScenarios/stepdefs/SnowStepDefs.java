@@ -1,12 +1,13 @@
 package cucumberScenarios.stepdefs;
 import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
 import com.sparta.owframework.OWWeatherDTO.Snow;
-import com.sparta.owframework.injector_manager_loader.ConnectionManager;
-import com.sparta.owframework.injector_manager_loader.Injector;
+import com.sparta.owframework.openweathermanager.ConnectionManager;
+import com.sparta.owframework.openweathermanager.Injector;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Assumptions;
 
 public class SnowStepDefs {
     OWWeatherDTO owWeatherDTO;
@@ -19,7 +20,8 @@ public class SnowStepDefs {
 
     @When("I check the snow values")
     public void iCheckTheSnowValues() {
-        Assertions.assertTrue(snow.hasJsonMember1h());
+        Assumptions.assumeTrue(snow.hasJsonMember1h());
+        Assumptions.assumeTrue(snow.hasJsonMember3h());
     }
 
     @Then("it should return the values which are double")

@@ -1,8 +1,8 @@
 package cucumberScenarios.stepdefs;
 import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
 import com.sparta.owframework.OWWeatherDTO.Rain;
-import com.sparta.owframework.injector_manager_loader.ConnectionManager;
-import com.sparta.owframework.injector_manager_loader.Injector;
+import com.sparta.owframework.openweathermanager.ConnectionManager;
+import com.sparta.owframework.openweathermanager.Injector;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -26,7 +26,7 @@ public class RainStepDefs {
 
     @When("I test value for the rain in an hour")
     public void iTestValueForTheRainInAnHour() {
-        Assumptions.assumeTrue(rain.getJsonMember1h() != null);
+        Assumptions.assumeTrue(rain.hasJsonMember1h());
     }
 
     @Then("It should  return value in double.")
@@ -36,7 +36,7 @@ public class RainStepDefs {
 
     @When("I test value for the rain in three hours")
     public void iTestValueForTheRainInThreeHours() {
-        Assumptions.assumeTrue(rain.getJsonMember3h() != null);
+        Assumptions.assumeTrue(rain.hasJsonMember3h());
     }
 
     @Then("I should be in the correct format.")
