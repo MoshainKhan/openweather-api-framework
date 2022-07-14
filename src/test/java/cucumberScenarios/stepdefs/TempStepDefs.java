@@ -45,9 +45,9 @@ public class TempStepDefs {
         Assertions.assertTrue(main.hasTemp());
     }
 
-    @Then("It should return an INT")
-    public void itShouldReturnAnINT() {
-        Assertions.assertInstanceOf(Integer.class, main.getTemp().getClass());
+    @Then("It should return a double")
+    public void itShouldReturnADouble() {
+        Assertions.assertInstanceOf(Double.class, main.getTemp());
     }
 
     @Then("It should not be equal to null")

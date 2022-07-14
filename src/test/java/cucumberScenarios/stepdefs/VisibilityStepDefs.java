@@ -14,12 +14,9 @@ public class VisibilityStepDefs {
 
     Integer visibility;
 
-
-
-    @Given("I have a JSON response")
-    public void iHaveAJSONResponse() {
+    @Given("I have a JSON response with visibility")
+    public void iHaveAJSONResponseWithVisibility() {
         owWeatherDTO = Injector.injectOWWeatherDTO(ConnectionManager.getConnectionCity("london"));
-
     }
 
     @When("I test the visibility value")
@@ -30,9 +27,8 @@ public class VisibilityStepDefs {
 
     @Then("I should get a value between zero and ten km")
     public void iShouldGetAValueBetweenZeroAndTenKm() {
-        Assertions.assertTrue(visibility >= 0 && visibility <= 100);
+        Assertions.assertTrue(visibility >= 0 && visibility <= 10000);
     }
-
 
 
 

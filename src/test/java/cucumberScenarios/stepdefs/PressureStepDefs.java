@@ -23,12 +23,12 @@ public class PressureStepDefs {
     }
     @When("I test values for pressure")
     public void iTestValuesForPressure() {
-        Assumptions.assumeTrue(owWeatherDTO.getMain().hasPressure());
+        Assumptions.assumeTrue(main.hasPressure());
     }
 
     @Then("I should receive a number data type")
     public void iShouldReceiveANumberDataType() {
-        Assertions.assertInstanceOf(Double.class,owWeatherDTO.getMain().getPressure().getClass());
+        Assertions.assertInstanceOf(Double.class, main.getPressure());
     }
 
 

@@ -3,38 +3,51 @@ import com.sparta.owframework.OWWeatherDTO.OWWeatherDTO;
 import com.sparta.owframework.OWWeatherDTO.Rain;
 import com.sparta.owframework.injector_manager_loader.ConnectionManager;
 import com.sparta.owframework.injector_manager_loader.Injector;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Assumptions;
+import org.junit.jupiter.api.DisplayName;
 
 public class RainStepDefs {
 
     OWWeatherDTO owWeatherDTO;
     Rain rain;
 
+
+
     @Given("I have a JSON response including Rain")
     public void iHaveAJSONResponseIncludingRain() {
         owWeatherDTO = Injector.injectOWWeatherDTO(ConnectionManager.getConnectionCity("london"));
         rain = owWeatherDTO.getRain();
     }
+
     @When("I test value for the rain in an hour")
     public void iTestValueForTheRainInAnHour() {
-
+        Assumptions.assumeTrue(rain.getJsonMember1h() != null);
     }
 
-    @Then("I should  return the double.")
-    public void iShouldReturnTheDouble() {
-        Assertions.assertInstanceOf(Double.class, rain.getJsonMember1h().getClass());
+    @Then("It should  return value in double.")
+    public void itShouldReturnValueInDouble() {
+        Assertions.assertInstanceOf(Double.class, rain.getJsonMember1h());
     }
 
-    @When("I test value for the rain for three hours.")
-    public void iTestValueForTheRainForThreeHours() {
-        Assertions.assertTrue(rain.hasJsonMember3h());
+    @When("I test value for the rain in three hours")
+    public void iTestValueForTheRainInThreeHours() {
+        Assumptions.assumeTrue(rain.getJsonMember3h() != null);
     }
 
-    @Then("I should  return the a double.")
-    public void iShouldReturnTheADouble() {
-        Assertions.assertInstanceOf(Double.class, rain.getJsonMember3h().getClass());
+    @Then("I should be in the correct format.")
+    public void iShouldBeInTheCorrectFormat() {
+        Assertions.assertInstanceOf(Double.class, rain.getJsonMember1h());
     }
+
+    @Then("It should return a three hour value in  double.")
+    public void itShouldReturnAThreeHourValueInDouble() {
+        Assertions.assertInstanceOf(Double.class, rain.getJsonMember3h());
+    }
+
+
 }

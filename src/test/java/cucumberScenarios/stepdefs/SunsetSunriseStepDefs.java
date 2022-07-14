@@ -35,7 +35,7 @@ public class SunsetSunriseStepDefs {
 
     @Then("they should be in the EPOC format")
     public void theyShouldBeInTheEPOCFormat() {
-        Assertions.assertInstanceOf(LocalDate.class, sys.convertEpocToLocal(sys.getSunset()).getClass());
+        Assertions.assertInstanceOf(LocalDate.class, sys.convertEpocToLocal(sys.getSunset()));
     }
 
     @Then("they should NOT be equal to null")

@@ -2,7 +2,7 @@ Feature: As a Tester,I want the framework that will check the values for visibil
           are between 0 and 10km,so that I can check for in accurate outputs.
 
   Background:checking the value for the visibility.
-    Given I have a JSON response
+    Given I have a JSON response with visibility
 
     Scenario: checking the value for the visibility is between 0 and 10 km.
     When I test the visibility value
