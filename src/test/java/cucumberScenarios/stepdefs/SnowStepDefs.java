@@ -18,7 +18,7 @@ public class SnowStepDefs {
         snow = owWeatherDTO.getSnow();
     }
 
-    @When("I check the snow values")
+    @When("I check the snow values for one hour")
     public void iCheckTheSnowValues() {
         Assumptions.assumeTrue(owWeatherDTO.hasSnow());
     }
@@ -31,5 +31,21 @@ public class SnowStepDefs {
     @Then("it should return a value equal to or more than zero")
     public void itShouldReturnAValueEqualToOrMoreThanZero() {
         Assertions.assertTrue(snow.getJsonMember1h() >= 0);
+    }
+
+    @When("I check the snow values for three hours")
+    public void iCheckTheSnowValuesForThreeHours()  {
+        Assumptions.assumeTrue(owWeatherDTO.hasSnow());
+    }
+
+
+    @Then("it should return a double")
+    public void itShouldReturnADouble() {
+        Assertions.assertInstanceOf(Double.class, snow.getJsonMember3h());
+    }
+
+    @Then("It should return a value greater than zero")
+    public void itShouldReturnAValueGreaterThanZero()  {
+        Assertions.assertTrue(snow.getJsonMember3h() >= 0);
     }
 }
