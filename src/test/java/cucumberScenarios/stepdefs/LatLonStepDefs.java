@@ -28,16 +28,11 @@ public class LatLonStepDefs {
     }
 
 
-    @Then("I should receive a value between minus ninty and plus ninty")
-    public void iShouldReceiveAValueBetweenMinusNintyAndPlusNinty() {
+    @Then("I should receive a value between minus ninety and plus ninety")
+    public void iShouldReceiveAValueBetweenMinusNinetyAndPlusNinety() {
         Assertions.assertTrue(coord.isLatBetweenNeg90AndPos90());
     }
 
-    @Then("I should receive a value with no more than {int} decimal places")
-    public void iShouldReceiveAValueWithNoMoreThanFourDecimalPlaces() {
-        Assertions.assertTrue(coord.has4NumsAfterDecimalPoint(coord.getLat()));
-
-    }
 
     @When("I test the lon field")
     public void iTestTheLonField() {
@@ -50,11 +45,14 @@ public class LatLonStepDefs {
     }
 
 
-    @Then("I should receive a value  with no more than {int} decimal places")
-    public void iShouldReceiveAValueWithNoMoreThanDecimalPlaces() {
-        Assertions.assertTrue(coord.has4NumsAfterDecimalPoint(coord.getLon()));
+    @Then("I should receive a lat value with no more than four decimal places")
+    public void iShouldReceiveALatValueWithNoMoreThanFourDecimalPlaces() {
+        Assertions.assertTrue(coord.has4NumsAfterDecimalPoint(coord.getLat()));
     }
 
 
-
+    @Then("I should receive a lon value  with no more than four decimal places")
+    public void iShouldReceiveALonValueWithNoMoreThanFourDecimalPlaces() {
+        Assertions.assertTrue(coord.has4NumsAfterDecimalPoint(coord.getLon()));
+    }
 }

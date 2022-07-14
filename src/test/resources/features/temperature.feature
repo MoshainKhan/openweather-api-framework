@@ -13,7 +13,7 @@ Feature: As a Tester, I want a Framework that will ensure the temperatures are v
 
     Scenario: Checking the temperature returns a valid value
       When I check the temperature value
-      Then It should return an INT
+      Then It should return a double
 
     Scenario: Checking the temperature is not equal to null
       When I check the temperature value

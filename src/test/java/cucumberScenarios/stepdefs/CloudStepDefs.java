@@ -16,8 +16,9 @@ public class CloudStepDefs {
     OWWeatherDTO owWeatherDTO;
 
 
-    @Given("I have a JSON response")
-    public void iHaveAJSONResponse() {
+
+    @Given("I have a JSON response With Cloud")
+    public void iHaveAJSONResponseWithCloud() {
         owWeatherDTO = Injector.injectOWWeatherDTO(ConnectionManager.getConnectionCity("london"));
         clouds = owWeatherDTO.getClouds();
     }
@@ -29,7 +30,8 @@ public class CloudStepDefs {
 
     @Then("I should get a number data type")
     public void iShouldGetANumberDataType() {
-        Assertions.assertInstanceOf(Number.class, clouds.getAll().getClass());
+
+        Assertions.assertInstanceOf(Integer.class, clouds.getAll());
     }
 
     @Then("I should get a value greater than zero")
@@ -44,4 +46,6 @@ public class CloudStepDefs {
         int cloudCoverage = clouds.getAll();
         Assertions.assertTrue(cloudCoverage >= 0 && cloudCoverage <= 100);
     }
+
+
 }

@@ -12,7 +12,7 @@ public class Clouds{
 	}
 
 	public boolean hasCloud() {
-		return getAll() == null;
+		return getAll() != null;
 	}
 
 

@@ -6,11 +6,11 @@ Feature: As a Tester, I want a framework that will check that the coordinates ar
 
   Scenario: Checking lat is valid
     When I test the lat field
-    Then I should receive a value between minus ninty and plus ninty
+    Then I should receive a value between minus ninety and plus ninety
 
   Scenario: Checking lat has no more than 4 decimal places
     When I test the lat field
-    Then I should receive a value with no more than four decimal places
+    Then I should receive a lat value with no more than four decimal places
 
   Scenario: Checking lon is valid
     When I test the lon field
@@ -18,5 +18,5 @@ Feature: As a Tester, I want a framework that will check that the coordinates ar
 
   Scenario: Checking lon has no more than 4 decimal places
     When I test the lon field
-    Then I should receive a value  with no more than four decimal places
+    Then I should receive a lon value  with no more than four decimal places
 
