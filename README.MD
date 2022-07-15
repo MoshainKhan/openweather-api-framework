@@ -75,7 +75,7 @@ properties.load(new FileReader({ADD YOUR .properties FILE PATH HERE}));
 The aim of the framework is to remove as much of the workload from the tester so that they can focus solely on what, within the API, to test. Offering methods to check for null values, valid value boundaries and consistent data, plus checking responses against the Open Weather documentation. In most cases practical boundaries have been placed on values such as wind direction degrees being within 0 - 360, and wind speed being above 0 however, some reasonable assumptions have been made with regard to valid values that must be noted by any user of the framework.
 
 **pressure**
-Within the **main** field of the API response which is a reading of atmospheric pressure. It has been assumed that atmospheric pressure would be incorrect if it were to be below 200 or above 1100. This assumption was made adter reashearch suggested that this would be inhospitable pressure and it falls way above and below any pressure ever recorded on Earth.
+Within the **main** field of the API response which is a reading of atmospheric pressure. It has been assumed that atmospheric pressure would be incorrect if it were to be below 200 or above 1100. This assumption was made after research suggested that this would be inhospitable pressure and it falls way above and below any pressure ever recorded on Earth.
 
 **feels_like**
 Within the **main** field of the API response which is a reading of what the temperature will feel like compared to actual temp. It has been assumed that feels_like would be incorrect if it where within 5 above or below the actual temp. This assumption was made based on extensive reasearch of historical responses.
